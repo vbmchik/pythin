@@ -7,7 +7,7 @@ def solve(pattern):
     
     if not ifBracketsEqual(pattern):
         print('Non equal bracets!')
-        exit -1
+        return None
     pattern = removeBrackets(pattern)
     indOp = indexOfOperator(pattern)
     if indOp == -1:
@@ -44,8 +44,8 @@ def mathOperator(pattern):
     if sw == 3:
         sum += math.cos(math.radians(solve(pattern[4:l-1])))
     if sw == 4:
-        ind = indexOfCharacter(';', pattern)
-        sum += math.pow(solve(pattern[0:ind]),solve(pattern[ind+1:]))
+        ind = indexOfCharacter(';', pattern[4:l-1])+4
+        sum += math.pow(solve(pattern[4:ind]),solve(pattern[ind+1:l-1]))
     if sw == 5:
         sum = math.sqrt(solve(pattern[5:l-1]))
     if sw == 6:
@@ -55,7 +55,7 @@ def mathOperator(pattern):
     if sw == 8:
         sum = math.abs(solve(pattern[4:l-1]))
     if sw == 9:
-        ind = indexOfCharacter(';', pattern)
+        ind = indexOfCharacter(';', pattern[4:l-1])+5
         sum = math.max(solve(pattern[:ind]),solve(pattern[ind+1:l-1]))
     if sw == 10:
         sum = math.exp(solve(pattern[4:l-1]))
@@ -139,4 +139,4 @@ def indexOfCharacter(symbol, pattern, fromBegin=False):
     return index
 
 
-print(solve('(23.5-sin(10+20)*43)*(20+(2+8)/2)'))
+print(solve('pow(sin(20);2)+pow(cos(20);2)'))
