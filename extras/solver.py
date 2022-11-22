@@ -1,14 +1,18 @@
 import math
 
 def solve(pattern):
-
+# смотрим если первый символ -
     if pattern[:1] == '-':
         return -1.0*solve(pattern[1:])
-    
+# проверка равенства скобок    
     if not ifBracketsEqual(pattern):
         print('Non equal bracets!')
         return None
+# убираем лишние скобки (1+3)=>1+4        
     pattern = removeBrackets(pattern)
+# ищеим есть ли в строке действие - если их несколько то ищем те, 
+# что выполняются в последнюю очередь (так как сначала выполняется то что в рекурсии стоит в конце цепочки)   
+# находим индекс символа этого действия  
     indOp = indexOfOperator(pattern)
     if indOp == -1:
         if pattern[:1] == '-':
@@ -16,6 +20,7 @@ def solve(pattern):
         else:
             return mathOperator(pattern)
     c = list(pattern)[indOp]
+# разбиваем строку по мат действию     
     if c == '+':
         return solve(pattern[:indOp])+solve(pattern[indOp+1:])
     if c == '-':
@@ -28,7 +33,7 @@ def solve(pattern):
         return solve(pattern[:indOp])%solve(pattern[indOp+1:])
     return 0.0
 
-
+# здесь мы ищем указатели на мет функции или возвращаем число если никаких функций нет
 def mathOperator(pattern):
     sum = 0.0
     parts=pattern.split('(')
@@ -65,7 +70,7 @@ def mathOperator(pattern):
     return sum
 
     
-
+# остаток от логики в другом языке - возвращаем номер мат функции
 def switchOperator(pattern):
     if pattern == 'e':
         return 1
@@ -89,9 +94,10 @@ def switchOperator(pattern):
         return 10
     return 0
 
+# проверяем что количество открывающих скобок равно количеству закрывающих
 def ifBracketsEqual(pattern):
     return pattern.count('(') == pattern.count(')')
-
+# убираем лишние скобки (1+3)=>1+4     
 def removeBrackets(pattern):
     indOp = indexOfOperator(pattern)
     symbols= list(pattern)
@@ -100,7 +106,7 @@ def removeBrackets(pattern):
         if symbols[0] == '(' and symbols[l-1] == ')':
             pattern = pattern[1:l-1]
     return pattern
-
+# находим мат действия - можно соптимизировать
 def indexOfOperator(pattern):
     indOp = -1
     i = indexOfCharacter('+', pattern ) 
@@ -121,7 +127,7 @@ def indexOfOperator(pattern):
     return -1
     
 
-
+# находим символ в строке если он не экранирован скобками - первый с начала или первый с конца
 def indexOfCharacter(symbol, pattern, fromBegin=False):
     index = -1
     flag=0
