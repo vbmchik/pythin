@@ -145,4 +145,4 @@ def indexOfCharacter(symbol, pattern, fromBegin=False):
     return index
 
 
-print(solve('pow(sin(20);2)+pow(cos(20);2)'))
+print(solve('pow(sin(30);2)+pow(cos(0);2)'))
