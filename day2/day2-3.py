@@ -9,7 +9,20 @@ odd_nums = [num for num in range(1,34,1) if num%2 == 0]
 #print(odd_nums)
 def odd(x):
     if x%2 !=0:
-        return x 
+        return x
+
+t = {
+    "cio" : ["John", "Smith"],
+    "cto" : ['John', 'Black'],
+    'cfo' : ['Sandra', 'Bullock'],
+    'ceo' : ['John', 'Pollock']
+}
+
+i = filter( lambda item: item[1][0] == 'John', t.items())
+q = [key[0] for key in t.items() if key[1][0]=='John']
+print(list(q))
+m = map(lambda x: x[0], i)
+print(list(m))
 
 odd_nums = []
 for num in range(1,32,4):
