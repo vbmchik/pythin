@@ -11,7 +11,7 @@ def combine(files, n, pres):
     for x in files[n]:
         res = copy.copy(pres)
         res.append(x)
-        if( flag ):
+        if flag:
             print(res)
         else:
             combine(files,n+1,res)
@@ -23,6 +23,7 @@ def combine(files, n, pres):
 
 if __name__ == "__main__":    
     files = [[1,2,3,4], ['a','b','c'], [5,6,7], ['tree', 'stone', 'field', 'grass'],[1,2,3,4,5]]
-    #combine(files,0,[])
-    print(fact(10))
-    #print(set(files[0])&set(files[2]))
+    combine(files,0,[])
+    #print(fact(10))
+    print( set(files[0]) & set(files[4]) )
+    # результаты не выводить на экран в методе combine а сохраняем (добавляем) в список такой же как в условии
