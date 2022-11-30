@@ -1,0 +1,1 @@
+[{"name": "One", "color": "White", "series": ["1", "2", "3"]}, {"name": "two", "color": "black", "series": [1, 3, 4]}]
