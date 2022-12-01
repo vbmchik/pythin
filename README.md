@@ -22,3 +22,7 @@ Passcode: 2ham%9b$
 27-11
 https://us06web.zoom.us/rec/share/o2iBJksOTAE_T-3BpItopXk5pDvDQHsphHqAIxASrCH3ZEx129IMGI7YbEX5npLx.UAukeknz5-dd1WLr 
 Passcode: ^yZJ5=#x
+
+30-11
+https://us06web.zoom.us/rec/share/6Vu0jOlwgfWU8Xaqc-OpQolimgWZSjV4DrxD2xjH0d_mBxX34psOZCWZeHpVsLtP.vC9yRyINuV0tZRdn 
+Passcode: K4$LrhK+
