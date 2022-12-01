@@ -11,8 +11,9 @@ https://www.programiz.com/python-programming/file-operation
 windows path python
 https://stackoverflow.com/questions/2953834/windows-path-in-python
 
-tensorflow neural network
-python3 -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.12.0-py3-none-any.whl
+
+Anaconda for tensorflow installing without issues
+https://www.anaconda.com
 
 записи уроков 
 20-11
