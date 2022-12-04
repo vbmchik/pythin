@@ -1,5 +1,3 @@
-
-
 try:
     with open('/Users/vbm/tunnel.sh', 'r') as f:
         print(f.read())
