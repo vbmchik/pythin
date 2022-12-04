@@ -6,7 +6,7 @@ from itertools import groupby;
 def mapfunc(w):
     # Let us remove all puncuation and spaces.  
     cleanword = ''.join([i for i in w if i.isalpha()])
-    return [cleanword,1];
+    return [cleanword.lower(),1];
 
 def reducefunc(key, values):
     counts = [x[1] for x in values];
@@ -15,7 +15,7 @@ def reducefunc(key, values):
 print('start',datetime.now())
 with open("advs.txt",encoding="utf-8") as f:
     fulltext = f.read()
-    fulltext = fulltext.replace(",","").replace(".","").replace(":","").replace("?","").replace("!","").replace("-","").replace(";","").replace("\n","").replace('"',"").replace("'","")
+    fulltext =  ''.join (x for word in fulltext for x in word if x.isalpha() or x == ' ')
     fulltext = fulltext.lower()
     ls = fulltext.split()
     print('get words',datetime.now())
@@ -26,8 +26,13 @@ with open("advs.txt",encoding="utf-8") as f:
         d[word] = ls.count(word)
     print('created dict',datetime.now())    
     print(len(ls))
-    print(len(unique))    
+    print(len(unique))  
+#d = dict(sorted(d.items(), key= lambda x : x[1], reverse=True))      
 print('done first',datetime.now())
+
+
+
+# Google algorythm inplementation
 with open("advs.txt") as f:
     words=[word for line in f for word in line.split()]
 print('get words',datetime.now())
