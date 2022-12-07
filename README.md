@@ -34,3 +34,7 @@ Passcode: K4$LrhK+
 4-12
 https://us06web.zoom.us/rec/share/F78p0mklHtsCkBGqbHKObobMf4AunebxpOt6ree_91erH2GvqWjOA7Ggtvd_sOD3.9I-C79rpMh828fJ5 
 Passcode: p9D0h?$U
+
+7-12
+https://us06web.zoom.us/rec/share/JGz7608GJs8htA6n-PqkAjYFRbMPRRWMFbeXNn4NDlcSeN5pFvzy6i1epd2W9nSs.8eEYRRPC84xHZOzd 
+Passcode: w9GR3@ah

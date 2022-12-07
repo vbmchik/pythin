@@ -1,6 +1,6 @@
 class Figure():
 
-    def __init__(self, n):
+    def __init__(self, n: int):
         self.n = n
 
     def print(self):

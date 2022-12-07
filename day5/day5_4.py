@@ -18,3 +18,7 @@ print(len(team2.dogs))
 print(len(team.dogs))
 team2.printTeam()
 team.printTeam()
+
+print([x.name for x in  team2.dogs])
+print([ x+y for x in range(1,10) for y in range(1,10) ])
+print([str(x)+str(y)+str(z) for x in range(1,10) for y in range(1,10) for z in range(1,10)] )
