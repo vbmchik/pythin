@@ -38,3 +38,6 @@ Passcode: p9D0h?$U
 7-12
 https://us06web.zoom.us/rec/share/JGz7608GJs8htA6n-PqkAjYFRbMPRRWMFbeXNn4NDlcSeN5pFvzy6i1epd2W9nSs.8eEYRRPC84xHZOzd 
 Passcode: w9GR3@ah
+11-12
+https://us06web.zoom.us/rec/share/bQXXtC-FdY7cn8QuoERI1AZRIDYGeLSkG2bgjnmAO6EstCjHTal5u5FlFEs0y3-l.eu3Nuk4S645f5w-B
+Passcode: L+$h3Yw*
