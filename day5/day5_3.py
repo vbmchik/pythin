@@ -9,6 +9,12 @@ class Team():
     def joinTeam(self,team):
         self.dogs.extend(team.dogs)
         team.dogs.clear()
+# не все переходят а только первые n собак
+#
+    def mixTeam(self, team, n):
+        for i in range(0,n):
+            self.dogs.append(team.dogs.pop(0))
+
     def printTeam(self):
         print(self.trainer)
         for dog in self.dogs:
