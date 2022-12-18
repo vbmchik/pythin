@@ -1,0 +1,3 @@
+SELECT name, age FROM study.cats; для всех котов выбираю только имя и возраст
+
+SELECT * FROM study.cats where age > 3 and price > 2000; все где возраст больше 3 а цена 2000

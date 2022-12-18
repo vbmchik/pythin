@@ -45,3 +45,7 @@ Passcode: L+$h3Yw*
 14-12
 https://us06web.zoom.us/rec/share/UvRk84WoXq55nJUSyfXdW5sf4sZ_1_zBu-y5T6iBNkYW9-aiByjTE7u93h9u8Gu7.3O_dQOvz-HIBE_fe
 Passcode: K^Btv84m
+
+18-12 
+https://us06web.zoom.us/rec/share/w-vgbzf3o_WOJnNJP8Dtz8PdK8shrtuXQdqOdwgUB9w82TvGJnzldwQhdSFGDCIL.q_I4qdQd7EvIcN_Z
+Passcode: z=fJ3X4w
