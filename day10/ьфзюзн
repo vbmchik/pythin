@@ -1,0 +1,14 @@
+l = [
+    ('a',2,2),
+    ('b',3,1),
+    ('c',4,5)
+]
+
+mtemp = map(lambda x: (x[1],x[2]) , l)
+
+print(list(mtemp))
+
+l = [1,2,3]
+
+
+print( list( map( lambda x: x**2, l)))
