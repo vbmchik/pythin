@@ -17,7 +17,7 @@ findb = mysql.connector.connect(
 
 
 cursor = findb.cursor()
-query = 'select * from Predicator.Finances order by year, month, business'
+query = 'select * from Predicator.Finances order by year'
 
 cursor.execute(query)
 results = cursor.fetchall()
@@ -32,17 +32,31 @@ results = cursor.fetchall()
 #    )
 #)
 # map берет список и превращает в другой список
-#
+#print(list(groupby(results, key=lambda x: x[0])))
+#d = dict(
+#    map(
+#        lambda y: (y[0],  list(map(lambda x: (x[1:]), y[1]))),
+#        groupby(results, key=lambda x: x[0])
+#    )
+#)
 #
 #
 #
 print(list(groupby(results, key=lambda x: x[0])))
 d = dict(
     map(
-        lambda y: (y[0],  list( map(lambda x: (x[1:]), y[1])) ),
+        lambda y: (y[0],  dict(
+            map(
+                lambda z: (z[0],  dict(
+                    map(lambda q: (q[2],q[3]), z[1]))),
+                        groupby(y[1], key=lambda p: p[1])
+            )
+        )),
         groupby(results, key=lambda x: x[0])
     )
  )
+
+print(d['2018']['Май']['Отопление'])
 
 #d = dict(
 #    map(
