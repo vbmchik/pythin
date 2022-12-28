@@ -23,4 +23,18 @@ query += 'on cat_owner_relation.ownerid = cat_owners.idcat_owners '
 catcursor.execute(query)
 cats = catcursor.fetchall()
 
-print(cats)
+#print(cats)
+# 0 - имя мероприятия 3 - имя кота 
+cats.sort(key= lambda x: x[0])
+#print(cats)
+dcats = dict(map( lambda record: (record[0], list(map(lambda t: t[3], record[1]))),
+     groupby(cats, lambda x: x[0])))
+ddd={}
+for y in groupby(cats, lambda q: q[0]):
+    ddd[y[0]] = list(map(lambda x: x[3], y[1]))
+print(ddd)
+newcats = dict(map(
+      lambda e: (e[0], list(map( lambda p: p[3], e[1]))),
+      groupby(cats, lambda q:  q[0])
+))
+print(newcats)

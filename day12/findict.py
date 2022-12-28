@@ -5,17 +5,17 @@ class Finance():
 
     def yearincome(self, year):
         sum = 0.0
-        for month in self.d[year]:
-            for business in self.d[year][month]:
-                sum = sum + self.d[year][month][business]
+        for month in d[year]:
+            for business in d[year][month]:
+                sum = sum + d[year][month][business]
         return sum
 
     def bestmonth(self, year):
         max = [year, '', 0.0]
         for month in d[year]:
             sum = 0.0
-            for business in self.d[year][month]:
-                sum = sum + self.d[year][month][business]
+            for business in d[year][month]:
+                sum = sum + d[year][month][business]
             if sum > max[2]:
                 max = [year, month, sum]
         return max
@@ -27,17 +27,17 @@ class Finance():
             l.append((t[1], t[2], t[3]))
         return l
 
-    def __init__(self):
+    def __init__(self, host, user, password, dbase, table):
 
         self.findb = mysql.connector.connect(
-            host='localhost',
-            user='python',
-            password='!QA2ws3ed'
+            host=host,
+            user=user,
+            password=password
         )
 
 
         self.cursor = self.findb.cursor()
-        self.query = 'select * from Predicator.Finances order by year, month, business'
+        self.query = f'select * from {dbase}.{table} order by year, month, business'
 
         self.cursor.execute(self.query)
         self.results = self.cursor.fetchall()

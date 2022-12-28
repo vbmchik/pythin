@@ -10,8 +10,9 @@ def mapfunc(w):
 # . counts = [1,1,1,1,1,1]
 #
 def reducefunc(key, values):
-    counts = [x[1] for x in values]
-    return [key,sum(counts)]
+    #counts = [x[1] for x in values]
+    # return [key,sum(counts)]
+    return [key, len(values)]
 
 print('start ',datetime.now())
 with open("advs.txt",encoding="utf-8") as f:
