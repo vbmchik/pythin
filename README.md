@@ -70,4 +70,6 @@ Passcode: 7H50+FhJ
 https://us06web.zoom.us/rec/share/hBY83qQTOpvmGlobSR6REXh-KA_Cyx53zO4EO-h5Osu4dLwlvu-IpzJTSJomOwSM.sWN7cB4tYakxB2O2
 Passcode: 2U4qB?K%
 
-
+8-01
+https://us06web.zoom.us/rec/share/mErFdfkgpcVHK8ARgdMXmmaBXieQ2a0esnAqJN8YB_2597NyOjBofeERWSYW8Rue.Bb6f1j3YEPjRFDVu
+Passcode: EZ=2=.DG
