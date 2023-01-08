@@ -1,2 +1,9 @@
 дополниь базу
 дописать manager.py так чтобы он обрабатывал больше информации больше выбора
+
+
+git
+
+ git clone https://github.com/vbmchik/pythin
+
+ 
