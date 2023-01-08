@@ -4,6 +4,12 @@
 
 git
 
- git clone https://github.com/vbmchik/pythin
+git clone https://github.com/vbmchik/pythin
 
- 
+git pull
+
+создаем папку где будут все ваши репозитарии 
+создаем там папку homework(name) 
+дальше создаем новый репозитарий в гит
+в комнандной строке заходим в папке homework(name)
+а дальше подсказки в гит
