@@ -15,6 +15,11 @@ https://stackoverflow.com/questions/2953834/windows-path-in-python
 Anaconda for tensorflow installing without issues
 https://www.anaconda.com
 
+
+Диана
+https://github.com/diana-manole/homeworkdiana
+
+
 записи уроков 
 20-11
 https://us06web.zoom.us/rec/play/1BsBwPQGwivs85k-uI8qzKJoisq2wwjE2sA0IhhPhwSay5sSszF8WGYQOJ_9GTD5ocP0IsfPu8MSbjpd.0Bx-Eb_to2NrvV7P?continueMode=true&_x_zm_rtaid=ZF_Dae7fSyGI0X85ME6FIA.1669044394266.6c1190037f162e77a8c31595553f3d89&_x_zm_rhtaid=313
@@ -73,3 +78,8 @@ Passcode: 2U4qB?K%
 8-01
 https://us06web.zoom.us/rec/share/mErFdfkgpcVHK8ARgdMXmmaBXieQ2a0esnAqJN8YB_2597NyOjBofeERWSYW8Rue.Bb6f1j3YEPjRFDVu
 Passcode: EZ=2=.DG
+
+
+11-01
+https://us06web.zoom.us/rec/share/7eiJP6vTMasPNBb6PtK5dhX-qBhaUu4nlfH9aJOJjuUXIGcnpkCRV5DbJ65yd5gV.VvaRpjialkGt39x5
+Passcode: G8X#*7+h
