@@ -9,9 +9,9 @@ from flet import Page, Text
 def main(page: Page):
 
     
-    xdata = list(range(-200,201))
+    xdata = list(range(-2000,2001))
     xlabels = list(map(lambda t: str(t), xdata))
-    ydata = list(map(lambda t: solver.solve(f"sin({t})+5*cos(({t})*2)") , xdata))
+    ydata = list(map(lambda t: solver.solve(f"sin({t})+{t}*cos(({t})*2)") , xdata))
     #ydata = list(map(lambda t: solver.solve(
     #    f"cos(({t})*2)"), xdata))
     #style=px.data.gapminder().query("continent=='Oceania'")
