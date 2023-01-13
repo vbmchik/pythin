@@ -9,9 +9,11 @@ from flet import Page, Text
 def main(page: Page):
 
     
-    xdata = range(0,2001,1)
+    xdata = list(range(-200,201))
     xlabels = list(map(lambda t: str(t), xdata))
     ydata = list(map(lambda t: solver.solve(f"sin({t})+5*cos(({t})*2)") , xdata))
+    #ydata = list(map(lambda t: solver.solve(
+    #    f"cos(({t})*2)"), xdata))
     #style=px.data.gapminder().query("continent=='Oceania'")
     #fig = px.line(style, x='year', y='lifeExp', color='country')
     df = pandas.DataFrame(dict(
@@ -21,5 +23,6 @@ def main(page: Page):
     fig = px.line(df, x="x", y="y", title="Squares")
     
     page.add(Text('Test'),PlotlyChart(fig,expand=False))
+
 
 ft.app(target=main)

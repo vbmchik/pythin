@@ -3,8 +3,8 @@ import math
 
 def solve(pattern):
 # смотрим если первый символ -
-    if pattern[:1] == '-':
-        return -1.0*solve(pattern[1:])
+   
+
 # проверка равенства скобок    
     if not ifBracketsEqual(pattern):
         raise RuntimeError('Non equal bracets!')
@@ -17,7 +17,7 @@ def solve(pattern):
     indOp = indexOfOperator(pattern)
     if indOp == -1:
         if pattern[:1] == '-':
-            return -1.0*solve(pattern[1])
+            return -1*solve(pattern[1:])
         else:
             return mathOperator(pattern)
     c = list(pattern)[indOp]
@@ -114,7 +114,7 @@ def indexOfOperator(pattern):
     if i != -1:
         return i
     i = indexOfCharacter('-', pattern ) 
-    if i != -1:
+    if i != -1 and i!=0:
         return i
     i = indexOfCharacter('*', pattern ) 
     if i != -1:
@@ -147,4 +147,4 @@ def indexOfCharacter(symbol, pattern, fromBegin=False):
 
 
 #print(solve('pow(sin(30);2)+pow(cos(30);2)'))
-#print(solve('(2-3)*sin(90)+23*2'))
+#print(solve('cos(-199*2)'))

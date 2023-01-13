@@ -42,4 +42,5 @@ def main(page: Page):
         alignment="center")
     )
 
-fl.app(target=main)
+
+fl.app(target=main, view=fl.WEB_BROWSER)
