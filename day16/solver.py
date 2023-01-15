@@ -114,7 +114,10 @@ def indexOfOperator(pattern):
     if i != -1:
         return i
     i = indexOfCharacter('-', pattern ) 
-    if i != -1 and i!=0:
+    ch='2'
+    if( i > 0 ):
+        ch = pattern[i-1]
+    if i != -1 and i!=0 and ch != 'e':
         return i
     i = indexOfCharacter('*', pattern ) 
     if i != -1:
