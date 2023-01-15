@@ -22,22 +22,33 @@ def main(page: Page):
         b = int(endx.value)
         data = list(np.arange(a,b,0.1))
         funcs = func.value
-        values = list(map(lambda t: solver.solve(funcs.replace('@x',valSet(str(t)))),data))
-        df = pandas.DataFrame(dict(
-            x=data,
-            y=values
-        ))
-        fig = px.line(df, x="x", y="y", title="User function")
-        fig.update_traces(line=dict(color="Red", width=0.5))
-        column = Column([
-            rowf,
-            rowrange,
-            PlotlyChart(fig, expand=False)
-        ],scroll=ft.ScrollMode.ALWAYS)
+        try:
+            values = list(map(lambda t: solver.solve(funcs.replace('@x',valSet(str(t)))),data))
+        
+            df = pandas.DataFrame(dict(
+                x=data,
+                y=values
+            ))
+            fig = px.line(df, x="x", y='y', title="User function = "+func.value)
+            fig.update_traces(line=dict(color="Red", width=0.5))
+            column = Column([
+                rowf,
+                rowrange,
+                PlotlyChart(fig, expand=False)
+            ],scroll=ft.ScrollMode.ALWAYS)
 
-        page.clean()
-        page.add(column)
-        page.update()
+            page.clean()
+            page.add(column)
+            page.update()
+        except Exception as e:
+            column = Column([
+                rowf,
+                rowrange,
+                Text(str(e), size=40, color=ft.colors.RED)
+            ], scroll=ft.ScrollMode.ALWAYS)
+            page.clean()
+            page.add(column)
+            page.update()
 
     text = Text('Enter your function with variable as @x')
     func = TextField(value='')
