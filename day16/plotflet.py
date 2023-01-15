@@ -1,11 +1,11 @@
 import plotly.express as px
-from flet.plotly_chart import PlotlyChart
+from   flet.plotly_chart import PlotlyChart
 import plotly.graph_objects as go
 import flet as ft
 import numpy as np
 import pandas
 import solver
-from flet import Page, Text, TextField, Column, Row, IconButton
+from   flet import Page, Text, TextField, Column, Row, IconButton
 
 def main(page: Page):
    
