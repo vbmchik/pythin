@@ -87,3 +87,7 @@ Passcode: G8X#*7+h
 15-01
 https://us06web.zoom.us/rec/share/An3dC6lDc4yM4Bt6Ov5t5ZF4bF5gWnbbP8lcnaXmBWOxxJX52RbOqmI8lfduthpE.eP_7j9LlDZsVqxby
 Passcode: e!4EGkG7
+
+18-01
+https://us06web.zoom.us/rec/share/5UyOy-X0qNGq6T_H-0Wirun6dm5-IsaFEFK3yKzHZAc5QTjRcLIXfXQ0jKbGz3vj.cFq1mQcGUclTJTD1
+Passcode: 9^J6wQ&n

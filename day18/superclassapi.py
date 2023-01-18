@@ -13,17 +13,11 @@ class GetFromApi():
             self.URL = self.baseURL + '/'
         else:
             self.URL = self.baseURL
-
         self.URL = self.URL + method
-#        {
-#           [parameter1 name] : value,
-#           [parameter2 name] : value
-#        }    
         if len( parameters):
             self.URL = self.URL + "?"
         else:
-            return self  
-          
+            return self            
         notfirst = False
         for key, value in parameters.items():
             if notfirst :
@@ -33,8 +27,9 @@ class GetFromApi():
             notfirst = True
         return self
     
-    def GetDataFromApi(self, data = ""):
-        headers = {'Accept': 'application/json'}
+    def GetDataFromApi(self, data=""):
+        headers = {'Accept': 'application/json',
+                   'Content-type': 'application/json; charset=UTF-8'}
         if data == "":
             self.result = requests.get(self.URL, headers=headers)
         else:
