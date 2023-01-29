@@ -4,5 +4,4 @@
 если сможете сделайте еще приложение или новый проект
 years 
 months
-
 income (foreign.keys - year, month)

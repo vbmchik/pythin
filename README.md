@@ -99,3 +99,7 @@ Passcode: v6+rub.z
 25-01
 https://us06web.zoom.us/rec/share/xaWbdpmnpt3FAjcPwGxGtEDasVs6GixMwBEg4AMah0EmDhGg_Pszw5qBa_0Qo0ha.8uAT97L7F258yuI4
 Passcode: Mk?A.?N6
+
+29-01
+https://us06web.zoom.us/rec/share/zvvjyb0IINRiiZs4lL-XZl48L9qikjOuUz5Nhq1OZ3J23w2TrZQe4Nf9C2azgbpi.eGpL4C7IHMA43b_6
+Passcode: 8?C@q.J%
