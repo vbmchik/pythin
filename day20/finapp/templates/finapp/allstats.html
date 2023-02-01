@@ -1,0 +1,13 @@
+{% extends "finapp/base.html" %}
+{% block content %}
+    <p>This is overall incomes for all years and depts</p>
+     <ul>
+        {% for entry in incomes %}
+            <li>
+               <p>{{ entry }}<p>
+            </li>
+        {% empty %}
+            <li>Call David to fill the list asap!</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

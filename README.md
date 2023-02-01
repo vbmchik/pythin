@@ -103,3 +103,7 @@ Passcode: Mk?A.?N6
 29-01
 https://us06web.zoom.us/rec/share/zvvjyb0IINRiiZs4lL-XZl48L9qikjOuUz5Nhq1OZ3J23w2TrZQe4Nf9C2azgbpi.eGpL4C7IHMA43b_6
 Passcode: 8?C@q.J%
+
+01-02
+https://us06web.zoom.us/rec/share/6t_3NpdjnaYaS3eGopgEQDdLnhBzH3Y_7XOkQ4hQobm7tLqqs5WREJQc-DORBI4.4TgFZBQenN6P7p2s
+Passcode: vE07=&$p
