@@ -16,4 +16,4 @@ class Phone(models.Model):
     color = models.ForeignKey(Color,on_delete=models.CASCADE)
     phone = models.CharField(max_length=45)
     def __str__(self) -> str:
-        return f'{self.brand} {self.phone}({self.color})'
+        return f'{self.brand} {self.phone} ({self.color})'

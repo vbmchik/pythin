@@ -1,0 +1,10 @@
+{% extends "firstapps/base.html" %}
+{% block content %}
+<p>Edit entry</p>
+<p>Topic: <a href="{% url 'firstapps:topic' topic.id %}">{{ topic }}</a></p>
+<form action="{% url 'firstapps:edit_entry' entry.id %}" method='post' >
+    {% csrf_token %}
+    {{ Form.as_p }}
+    <button name="submit">Save changes</button>
+</form>
+{% endblock content %}

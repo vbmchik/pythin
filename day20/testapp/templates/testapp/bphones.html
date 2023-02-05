@@ -1,0 +1,12 @@
+{% extends "testapp/base.html" %}
+{% block content %}
+    <ul>
+    {% for phone in FilteredPhones %}
+    <li>
+        {{phone}}
+    </li>
+    {% empty %}
+        <p>No brands still. Soon they will be added, check later...</p>
+    {% endfor %}
+    </ul>
+{% endblock content %}

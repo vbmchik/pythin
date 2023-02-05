@@ -1,0 +1,10 @@
+{% extends "testapp/base.html" %}
+{% block content %}
+    <p>
+    {% for brand in Brands %}
+        <a href="{% url 'testapp:bphones'  brand.id %}">{{brand}}</a>
+    {% empty %}
+        <p>No brands still. Soon they will be added, check later...</p>
+    {% endfor %}
+    </p>
+{% endblock content %}

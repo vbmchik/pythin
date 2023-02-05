@@ -1,0 +1,10 @@
+{% extends "testapp/base.html" %}
+{% block content %}
+    <p>
+    {% for color in Colors %}
+        <a href="{% url 'testapp:cphones' color.id %}">{{color}}</a>
+    {% empty %}
+        <p>No brands still. Soon they will be added, check later...</p>
+    {% endfor %}
+    </p>
+{% endblock content %}
