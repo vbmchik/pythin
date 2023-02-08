@@ -1,0 +1,9 @@
+{% extends "Cats/base.html" %}
+{% block content %}
+<p>Добавляем котика на продажу</p>
+<form action="{% url "Cats:addCat" %}" method="post">
+    {% csrf_token %}
+    {{ FORM.as_p }}
+    <button name="sumbit">Добавить кота</button>
+</form>
+{% endblock content %}

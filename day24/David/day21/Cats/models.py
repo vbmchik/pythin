@@ -13,7 +13,7 @@ class Breed(models.Model):
     temperament = models.ForeignKey(
         Temperament, on_delete=models.CASCADE, primary_key=False)
     def __str__(self):
-        return f"{self.breed}"
+        return f"Название породы: {self.breed}, характер: {self.temperament}"
 
     
 class Color(models.Model):
@@ -28,8 +28,8 @@ class Price(models.Model):
     color = models.ForeignKey(Color, on_delete=models.CASCADE, primary_key=False)
     age = models.CharField(max_length=3, unique=True)
     price = models.DecimalField(decimal_places=2, max_digits=10, primary_key=False)
-    
+        
     date_added = models.DateTimeField(auto_now_add=True, primary_key=False)
 
     def __str__(self):
-        return f"{self.breed} ({self.temperament}) Цвет: {self.color} Возраст: {self.age} ЦЕНА: {self.price}"    
+        return f"{self.breed} Цвет: {self.color} Возраст: {self.age} ЦЕНА: {self.price}"    

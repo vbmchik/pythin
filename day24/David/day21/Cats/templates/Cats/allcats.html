@@ -1,12 +1,12 @@
 {% extends "Cats/base.html" %}
 {% block content %}
-  <p>All breed of Cats</p>
+  <p>Коты на продажу</p>
   <ul>
-    {% for temp in TEMP %}
-    <p>{{ temp }}</p>
+    {% for cat in LIST %}
+    <p>{{ cat }}</p>
     {% empty %}
       <li>No breed have been added yet.</li>
     {% endfor %}
   </ul>
-  <p><a href="{% url "Cats:addTemp" %}">Добавить характер</a></p>
+  <p><a href="{% url "Cats:addCat" %}">Добавить кота</a></p>
 {% endblock content %}

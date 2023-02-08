@@ -111,3 +111,7 @@ Passcode: vE07=&$p
 05-02 
 https://us06web.zoom.us/rec/share/kC25Kd8J_8uadsVtaW77S6B85QchxVxmeyKY6kv0a6lxt0gefJgTQzrdkecFrqNi.RkF6XUNmFPqRMo1M
 Passcode: 19t1=.T=
+
+08-02
+https://us06web.zoom.us/rec/share/FCenBL6yytxi8L-8hgTGLbxOhd9FwEhReTC5vnK2vV0brzj-F7PAt8Z0cc_XJHiY.Ow32dBRTAcOO5sJt
+Passcode: Q!s2+@x*

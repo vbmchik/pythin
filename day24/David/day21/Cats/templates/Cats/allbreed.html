@@ -3,7 +3,8 @@
   <p>All breed of Cats</p>
   <ul>
     {% for breed in BREED %}
-    <p>{{ breed }}</p>
+    <p>Имя породы: {{ breed.breed }}<br>
+    Характер: {{ breed.temperament }}</p>
     {% empty %}
       <li>No breed have been added yet.</li>
     {% endfor %}
