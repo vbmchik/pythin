@@ -1,0 +1,12 @@
+{% extends "Cats/base.html" %}
+{% block content %}
+  <p></p>
+  <ul>
+    {% for temperament in TEMPERAMENTS %}
+    <p>Color: {{ temperament.color }} Age: {{ temperament.age }} Price: {{ temperament.price }}</p>
+    {% empty %}
+      <li>No have temperament, check letter.</li>
+    {% endfor %}
+  </ul>
+  <p><a href="{% url "Cats:addTemp" %}">Add new Temperament</a></p>
+{% endblock content %}
