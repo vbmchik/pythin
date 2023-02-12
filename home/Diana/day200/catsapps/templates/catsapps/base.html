@@ -1,0 +1,15 @@
+<p>
+    <a href="{% url 'catsapps:index' %}">Financial data for our Corp</a>
+    </p>
+    <p>
+    <a href="{% url 'catsapps:names' %}">Name</a>
+    </p>
+    <p>
+    <a href="{% url 'catsapps:colors' %}">Color</a>
+    </p>
+    <p>
+    <a href="{% url 'catsapps:cats' %}">Cats</a>
+    </p>
+    
+    
+    {% block content %}{% endblock content %}

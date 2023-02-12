@@ -1,0 +1,11 @@
+{% extends "firstapps/base.html" %}
+{% block content %}
+  <p>Topics</p>
+  <ul>
+    {% for topic in topics %}
+      <p><a href="{% url 'firstapps:topic' topic.id %}">{{ topic }}</a></p>
+    {% empty %}
+      <li>No topics have been added yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

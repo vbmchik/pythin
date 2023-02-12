@@ -1,0 +1,18 @@
+<p><a href="{% url 'Cats:index' %}">Information Cats </a></p>
+<p>
+    <a href="{% url 'Cats:images' %}">Семейные фотографии </a>
+    <a href="{% url 'Cats:allCats' %}"> Данные о всех котах </a>
+    <a href="{% url 'Cats:allColors' %}"> Поиск котов по цвету </a>
+
+
+</p>
+
+{% block content %}{% endblock content %}
+
+
+
+
+{% block additional_style %}
+<style>
+    body {background-color:aquamarine;}
+{% endblock additional_style %}

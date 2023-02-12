@@ -1,0 +1,17 @@
+{% extends "Cats/base.html" %}
+{% block content %}
+  <p>Котики по цветам</p>
+  <ul>
+    {% for c in COLORS %}
+    <p>
+      
+      {{ c.color }} есть в наличии кол:{{ c.n }} <a href = "{% url "Cats:catbycolor" c.color %}">{{ c.text }}</a>
+      
+    </p>
+    {% empty %}
+      <li>No cats have been added yet.</li>
+    {% endfor %}
+  </ul>
+
+  
+{% endblock content %}

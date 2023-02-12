@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('firstapps.urls')),
     path("finance/",include('finapp.urls')),
-    path("phones/", include("testapp.urls"))
+    path("phones/", include("testapp.urls")),
+    path('users/',include('users.urls'))
 ]

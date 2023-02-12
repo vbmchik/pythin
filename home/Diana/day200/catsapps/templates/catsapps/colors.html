@@ -1,0 +1,11 @@
+{% extends "catsapps/base.html" %}
+{% block content %}
+  <p>Colors</p>
+  <ul>
+    {% for color in colors %}
+      <p><a href="{% url 'catsapps:color' color.id %}">{{ color }}</a></p>
+    {% empty %}
+      <li>No color have been added yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

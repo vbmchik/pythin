@@ -1,6 +1,11 @@
-<p>
-<a href="{% url 'firstapps:index' %}">Learning Log</a></p>
-<p><a href="{% url 'firstapps:topics' %}">Topics</a>
-</p>
+<p><a href="{% url 'firstapps:index' %}">Learning Log</a></p>
+<p><a href="{% url 'firstapps:topics' %}">Topics</a></p>
+{% if user.is_authenticated %}
+   Hello, {{user.username}}
+   <a href="{% url 'users:logout' %}">Sign Out</a> 
+   {% else %}
+   <a href="{% url 'users:register' %}">Sign Up</a>
+   <a href="{%  url 'users:login' %}">Sign In</a>
+{% endif %}   
 <style="background-color:aquamarine;">
 {% block content %}{% endblock content %}

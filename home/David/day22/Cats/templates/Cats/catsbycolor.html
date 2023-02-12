@@ -1,0 +1,23 @@
+{% extends "Cats/base.html" %}
+{% block content %}
+
+
+  <p>Витрина</p>
+  <ul>
+    {% for cat in LISTBYCOLOR %} 
+      <p>{{ cat.filterby }} <a href="{% url 'Cats:files' %}"> {{ cat.text }}</a></p>
+      {% for image in images %}
+      <div>
+        {{ image.title }}
+      </div>
+      <div>
+        <img src="{{ image.image.url }}" >
+      </div>
+      {% endfor %}
+    {% empty %}
+      <li>На витрине нет котов, приходите позже.</li>
+    {% endfor %}
+  </ul>
+
+
+{% endblock content %}

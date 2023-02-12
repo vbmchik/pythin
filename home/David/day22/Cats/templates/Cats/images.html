@@ -1,0 +1,17 @@
+{% extends "Cats/base.html" %}
+{% block content %}
+{% for image in images %}
+<div>
+   {{ image.title }}
+</div>
+<div>
+   <img src="{{ image.image.url }}" >
+</div>
+{% endfor %}
+
+{% endblock content %}
+
+{% block additional_style %}
+<style>
+    body {background-color:aquamarine;}
+{% endblock additional_style %}

@@ -1,0 +1,14 @@
+{% extends "Cats/base.html" %}
+{% block content %}
+  <p>Котики</p>
+  <ul>
+    {% for cat in CATS %}
+    <p> {{ cat }} </p>
+    {% empty %}
+      <li>No cats have been added yet.</li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="{% url "Cats:addCat" %}">Добавить котенка</a></p>
+
+{% endblock content %}
