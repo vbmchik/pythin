@@ -1,0 +1,16 @@
+{% extends 'firstapps/base.html' %}
+{% block content %}
+  <p>Topic: <a href="{% url 'firstapps:topic' topic.id %}">{{ topic }}</a></p>
+  <p>Entries:</p>
+  <p><a href="{% url 'firstapps:new_entry' topic.id %}" method='post'>Add new Entry</a></p>
+  <ul>
+  {% for entry in entries %}
+    <li>
+      <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+      <p><a href="{% url 'firstapps:edit_entry' entry.id %}">{{ entry.text|linebreaks }}</a></p>
+    </li>
+  {% empty %}
+    <li>Call David to fill the list asap!</li>
+  {% endfor %}
+  </ul>
+{% endblock content %}

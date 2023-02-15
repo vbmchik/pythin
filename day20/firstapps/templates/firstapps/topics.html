@@ -1,12 +1,15 @@
 {% extends "firstapps/base.html" %}
+{% block page_header %}
+  <h1>Topics</h1>
+{% endblock page_header %}
 {% block content %}
-  <p>Topics</p>
   <ul>
     {% for topic in topics %}
-      <p><a href="{% url 'firstapps:topic' topic.id %}">{{ topic }}</a></p>
+
+      <li><p><a href="{% url 'firstapps:topic' topic.id %}">{{ topic }}</a></p></li>
     {% empty %}
-      <li>No topics have been added yet.</li>
+      <li><h3>No topics have been added yet.</h3></li>
     {% endfor %}
   </ul>
-  <a href="{% url 'firstapps:new_topic' %}">Add a new topic</a>
+  <h3><a href="{% url 'firstapps:new_topic' %}">Add a new topic</a></h3>
 {% endblock content %}

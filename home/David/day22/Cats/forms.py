@@ -16,17 +16,12 @@ class PriceForm(forms.ModelForm):
         labels = {"breed": "Порода", "color": "Окрас", "age": "Возраст", "price": "ЦЕНА" }
 
 class ResumeForm(forms.ModelForm):
-
-
-
-
    class Meta:
       model = Resume
       fields = ['file']
       
       
 class ImageForm(forms.ModelForm):
-
    class Meta:
       model = Image
       fields = ['image']
