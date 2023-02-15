@@ -1,9 +1,12 @@
 {% extends "Cats/base.html" %}
 {% block content %}
 <p>Пожалуйста, заполните данные о новом котике</p>
-<form action="{% url "Cats:addCat" %}" method="post">
+<form action="{% url "Cats:addCat" %}" method="post", enctype="multipart/form-data">
     {% csrf_token %}
-    {{ FORM.as_p }}
+    {{ catform.as_p }}
+    {{ imageform.as_p }}
     <button name="sumbit"> Добавить </button>
 </form>
 {% endblock content %}
+
+
