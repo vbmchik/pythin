@@ -12,6 +12,8 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 
 
+ 
+
 
 
 def index(request):
@@ -21,14 +23,17 @@ def index(request):
 @login_required
 def all_cat(request):    
     Imagesbycat = []
+
     cats_images = Image.objects.all()
     for image in cats_images:
         cwi = CatWithImage()          
         cwi.cat = Price.objects.get(id=image.id)
-        cwi.image = image.image.path.replace(
-                "Users/vbm/vscode/python/home/David/day22/", "")
+        cwi.image = "media/"+image.image.path
+        cwi.image = cwi.image.replace(
+            "/Users/vbm/vscode/python/home/David/day22/media/images/", "")
+        cwi.image = cwi.image.replace("/Cats/dateCats/","")
         Imagesbycat.append(cwi)
-        
+    
     mapper = {"images": Imagesbycat}
     return render(request,"Cats/allcats.html", mapper)
 
@@ -41,9 +46,10 @@ def catsbycolor(request, color_name):
         lc = urlsPlus()
         lc.filterby = cats
         lc.cats_id = Image.objects.get(id=cats.id)
-        lc.images = lc.cats_id.image.path.replace(
-                "Users/vbm/vscode/python/home/David/day22/", "")
-        print(lc.images)
+        lc.images="media/"+lc.cats_id.image.path
+        lc.images = lc.images.replace(
+            "/Users/vbm/vscode/python/home/David/day22/media/images/","")
+        lc.images = lc.images.replace("/Cats/dateCats/", "")
         cat.append(lc)
     
     
@@ -85,12 +91,7 @@ def add_cat(request):
             return redirect("Cats:allCats")
     mapper = {"catform": catform, "imageform": imageform}
     return render(request, "Cats/add_Cat.html", mapper)
-
-@login_required
-def del_cat(request, cat_id):
-    cat = Price.objects.get(id=cat_id)
-    cat.delete() 
-    return render(request, "Cats/del_Cat.html")
+        
 
 
         

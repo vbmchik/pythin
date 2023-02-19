@@ -1,0 +1,11 @@
+{% extends "catsapps/color.html" %}
+{% block content %}
+  <p>Colors</p>
+  <ul>
+    {% for colorbycats in COLORBYCATS %}
+        <p>{{ colorbycats }} </p>
+    {% empty %}
+      <li>No color have been added yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

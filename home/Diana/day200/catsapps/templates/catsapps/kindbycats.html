@@ -1,0 +1,11 @@
+{% extends "catsapps/kind.html" %}
+{% block content %}
+  <p>Kind</p>
+  <ul>
+    {% for kindbycats in KINDBYCATS %}
+        <p>{{ kindbycats }} </p>
+    {% empty %}
+      <li>No kind have been added yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

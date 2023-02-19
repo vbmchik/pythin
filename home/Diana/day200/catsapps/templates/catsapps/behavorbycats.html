@@ -1,0 +1,11 @@
+{% extends "catsapps/behavor.html" %}
+{% block content %}
+  <p>Behavor</p>
+  <ul>
+    {% for behavorbycats in BEHAVORBYCATS %}
+        <p>{{ behavorbycats }} </p>
+    {% empty %}
+      <li>No Behavor have been added yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

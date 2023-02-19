@@ -1,0 +1,12 @@
+
+{% extends "catsapps/base.html" %}
+{% block content %}
+    <p>This is overall incomes for all years and depts</p>
+     <ul>
+        {% for behavor in BEHAVOR %}
+            <p><a href="{% url 'catsapps:behavor' behavor.id %}">{{ behavor }}</a></p> 
+        {% empty %}
+            <li>Call David to fill the list asap!</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

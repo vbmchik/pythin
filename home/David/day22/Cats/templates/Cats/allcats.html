@@ -4,9 +4,6 @@
 
   {% for c in images %}
     <p>{{ c.cat }}</p>
-    <button type="button">
-        <a href="{% url 'Cats:delCat' c.cat.id %}">Click here!</a>
-    </button>
       <div>
         <img src="{{c.image }}"height="250" style="max-width: 270px">       
 

@@ -1,0 +1,12 @@
+
+{% extends "catsapps/base.html" %}
+{% block content %}
+    <p>This is overall incomes for all years and depts</p>
+     <ul>
+        {% for kind in KIND %}
+            <p><a href="{% url 'catsapps:kind' kind.id %}">{{ kind }}</a></p> 
+        {% empty %}
+            <li>Call David to fill the list asap!</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

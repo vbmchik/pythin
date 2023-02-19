@@ -1,44 +1,64 @@
-from django.shortcuts import render
-from .models import Name,Color,Cat
-
+from django.shortcuts import render, redirect
+from .models import Color,Cat,Behavor,Kind
+from .forms import CatForm
 # Create your views here.
 def index(request):
     """Home page of application"""
     return render(request, "catsapps/index.html")
 
-def names(request):
-    name = Name.objects.order_by("name")
-    content = {"NAME":name}
-    return render(request, "catsapps/names.html", content)
+def kind(request):
+    kind = Kind.objects.all()
+    content = {"KIND":kind}
+    return render(request, "catsapps/kind.html", content)
 
-def name(request, name_id):
-    name = Name.objects.get(id=name_id)
-   
-    context = { "NAME": name }
-    return render(request, "catsapps/name.html", context)
+def kindbycats(request, kind_id):
+    kind = Kind.objects.filter(id=kind_id)
+    context = { "KINDBYCATS": kind}
+    return render(request, "catsapps/kindbycats.html", context) 
+
+def behavor(request):
+    behavor = Behavor.objects.all()
+    content = {"BEHAVOR":behavor}
+    return render(request, "catsapps/behavor.html", content)
+
+def behavorbycats(request, behavor_id):
+    behavor= Behavor.objects.filter(id=behavor_id)
+    context = { "BEHAVORBYCATS": behavor}
+    return render(request, "catsapps/behavorbycats.html", context) 
 
 
-def colors(request):
-    color = Color.objects.order_by("color")
+def color(request):
+    color = Color.objects.all()
     content = {"COLOR":color}
-    return render(request, "catsapps/colors.html", content)
+    return render(request, "catsapps/color.html", content)
 
-def color(request, color_id):
-    color = Color.objects.get(id=color_id)
-    cats = color.entry_set.order_by("color")
-    context = {"COLOR": color, "CATS": cats}
-    return render(request, "catsapps/color.html", context)
-
-
+def colorbycats(request, color_id):
+    color = Color.objects.filter(id=color_id)
+    context = { "COLORBYCATS": color}
+    return render(request, "catsapps/colorbycats.html", context) 
 
 def cats(request):
-    cats = Cat.objects.order_by("name")
+    cats = Cat.objects.all()
     context = {"CATS": cats}
     return render(request, "catsapps/cats.html", context)
 
-def cat(request, cats_id):
-    cat = Cat.objects.get(id=cats_id)
-    context = {"CAT": cat}
-    return render(request, "catsapps/cat.html", context)
+def catss(request, cats_id):
+    catss = Cat.objects.filter(id=cats_id)
+    context = { "CATSS": catss}
+    return render(request, "catsapps/catss.html", context) 
 
+
+def add_cats(request):
+
+    if request.method != "POST":
+        # NO DATE IN REQUEST
+        form = CatForm()
+    else:
+        form = CatForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("catsapps:cats")
+
+    mapper = {"FORM": form}
+    return render(request, "catsapps/addCats.html", mapper)
 

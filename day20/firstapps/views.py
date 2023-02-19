@@ -5,6 +5,7 @@ from .models import Topics, Entry
 from .forms import TopicForm, EntryForm
 
 
+
 # Create your views here.
 
 def index(request):
@@ -15,7 +16,7 @@ def index(request):
 @login_required
 def topics(request):
     #topics = Topics.objects.order_by('data_added')
-    topics = Topics.objects.filter(owner=request.user).order_by('data_added')
+    topics = Topics.objects.all()
     content = {"topics": topics}
     return render(request, 'firstapps/topics.html', content)
 
@@ -23,10 +24,13 @@ def topics(request):
 @login_required
 def topic(request, topic_id):
     topic = Topics.objects.get(id=topic_id)
-    if topic.owner != request.user:
-        raise Http404
+    grrr = request.user.groups.all()
+    isowner = True
+    if topic.owner != request.user:           
+      isowner = False
+    #    raise Http404
     entries = topic.entry_set.order_by('date_added')
-    context = {"topic":topic, "entries": entries}
+    context = {"topic":topic, "entries": entries, "isowner": isowner, "grrr": grrr}
     return render(request, 'firstapps/topic.html', context)
 
 

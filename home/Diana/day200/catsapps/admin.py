@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Name,Color,Cat
+from .models import Color,Kind,Behavor,Cat
 
 # Register your models here.
 
-admin.site.register(Name)
-admin.site.register(Color)
 admin.site.register(Cat)
+admin.site.register(Behavor)
+admin.site.register(Kind)
+admin.site.register(Color)

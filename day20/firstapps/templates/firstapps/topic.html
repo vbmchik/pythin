@@ -11,7 +11,12 @@
     <div class="card mb-3">
       <div class="card-header">
         {{ entry.date_added|date:'M d, Y H:i' }}
-        <small><a href="{% url 'firstapps:edit_entry' entry.id %}">{{ entry.text|linebreaks }}</a></small>
+        {% if isowner %}
+          <small><a href="{% url 'firstapps:edit_entry' entry.id %}">{{ entry.text|linebreaks }}</a></small>
+        {% else %}
+           {{ entry.text|linebreaks }}
+        {% endif %} 
+        {{ grrr }}
       </div>
       <div class="card-body">
         <h4>{{ entry.text|linebreaks}}</h4>
