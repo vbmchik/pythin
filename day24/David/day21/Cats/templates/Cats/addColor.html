@@ -1,9 +1,0 @@
-{% extends "Cats/base.html" %}
-{% block content %}
-<p>Добавить новый цвет</p>
-<form action="{% url "Cats:addColor" %}" method="post">
-    {% csrf_token %}
-    {{ FORM.as_p }}
-    <button name="sumbit">Добавить</button>
-</form>
-{% endblock content %}
