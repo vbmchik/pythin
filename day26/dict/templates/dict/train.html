@@ -11,7 +11,7 @@ function notify(el, id) {
 {% block content %}
     <ul class="list-group">
         {% for word in words %}
-        <li class="list-group-item" onclick="notify(this, s{{word.id}})">{{word.word}} : <span id=s{{word.id}} class=s{{word.id}} style="color:white;">{{word.transc}}</span> </li>
+        <li class="list-group-item" onclick="notify(this, s{{word.id}})">{{word.word}} : <span id=s{{word.id}} class=s{{word.id}} style="color:white;">{{word.transc}} : {{word.meaning}}</span> </li>
         {% endfor %}
     </ul>
 {% endblock content %}
