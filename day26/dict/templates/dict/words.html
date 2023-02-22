@@ -1,0 +1,15 @@
+{% extends "dict/base.html" %}
+{% load bootstrap4 %}
+{% block page_header %}
+  <h2>Слова</h2>
+  <p>
+    <a href="{% url 'dict:addword'  %}" >Добавить слово</a>
+  </p>
+{% endblock page_header %}
+{% block content %}
+    <ul class="list-group">
+        {% for word in words %}
+        <li class="list-group-item">{{word}}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

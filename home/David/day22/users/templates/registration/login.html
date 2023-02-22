@@ -1,15 +1,19 @@
 {% extends "Cats/base.html" %} 
+{% load bootstrap4 %}
+{% block page_header %}
+<h2>Пожалуйста, пройдите авторизацию!</h2>
+
+{% endblock page_header %}
 
 {% block content %}
-    {% if form.errors %}
-    <p> Auth error. Check your credenitals. </p>
-    {% endif %}
 
-    <form method="post" action "{% url "users:login" %}" >
+    <form method="post" action "{% url "users:login" %}" class="form" >
         {% csrf_token %} 
-        {{form.as_p}}
-
-        <button name="sumbit">Вход</button>
+        {% bootstrap_form form %}
+        
+        {% buttons%}
+            <button name="sumbit" class="btn btn-success">Вход</button>
+        {% endbuttons%}
         <input type="hidden" name="next"
             value= "{% url 'Cats:index' %}" />
     </form>

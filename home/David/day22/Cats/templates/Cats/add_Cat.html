@@ -1,12 +1,19 @@
 {% extends "Cats/base.html" %}
+{% load bootstrap4 %}
+{% block page_header %}
+<h2>Пожалуйста, заполните данные о новом котике</h2>
+
+{% endblock page_header %}
+
 {% block content %}
-<p>Пожалуйста, заполните данные о новом котике</p>
-<form action="{% url "Cats:addCat" %}" method="post", enctype="multipart/form-data">
+<form action="{% url "Cats:addCat" %}" class="form" method="post", enctype="multipart/form-data">
     {% csrf_token %}
-    {{ catform.as_p }}
-    {{ imageform.as_p }}
+    
+    {% bootstrap_form catform %}
     <button name="sumbit"> Добавить </button>
 </form>
 {% endblock content %}
+
+
 
 

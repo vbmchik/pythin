@@ -7,50 +7,54 @@ from .catwithimage import CatWithImage
 from django.contrib.auth.decorators import login_required
 from itertools import groupby
 from django.db.models import Count
+from django.http import Http404
 from django.http import HttpResponseRedirect
 
 # Create your views here.
 
 
  
-
+def redirect_blog(request):
+    return redirect("users:login")
 
 
 def index(request):
     """Home page of application"""
     return render(request, "Cats/index.html")
 
-@login_required
-def all_cat(request):    
-    Imagesbycat = []
 
-    cats_images = Image.objects.all()
-    for image in cats_images:
-        cwi = CatWithImage()          
-        cwi.cat = Price.objects.get(id=image.id)
-        cwi.image = "media/"+image.image.path
-        cwi.image = cwi.image.replace(
-            "/Users/vbm/vscode/python/home/David/day22/media/images/", "")
-        cwi.image = cwi.image.replace("/Cats/dateCats/","")
-        Imagesbycat.append(cwi)
+@login_required
+def all_cat(request): 
     
+    Imagesbycat = []
+    cats_images = Price.objects.filter(owner=request.user, approved=1)    
+    for image in cats_images:
+        
+        cwi = CatWithImage()          
+        cwi.cat = Price.objects.filter(owner=request.user).get(id=image.id)
+        cwi.image = "/media/"+image.image.path
+        cwi.image = cwi.image.replace(
+            "media//Users/vbm/vscode/python/home/David/day22/","")
+        
+        if cwi.cat.approved == 1:
+            Imagesbycat.append(cwi)
+        
+            
     mapper = {"images": Imagesbycat}
     return render(request,"Cats/allcats.html", mapper)
 
 @login_required
 def catsbycolor(request, color_name):
-    catsbycolors= Price.objects.filter(color=color_name)
+    catsbycolors= Price.objects.filter(owner=request.user,color=color_name)
     cat =[]
     
     for cats in catsbycolors:
-        lc = urlsPlus()
-        lc.filterby = cats
-        lc.cats_id = Image.objects.get(id=cats.id)
-        lc.images="media/"+lc.cats_id.image.path
-        lc.images = lc.images.replace(
-            "/Users/vbm/vscode/python/home/David/day22/media/images/","")
-        lc.images = lc.images.replace("/Cats/dateCats/", "")
-        cat.append(lc)
+        cwi= CatWithImage()
+        cwi.cat = Price.objects.filter(owner=request.user).get(id=cats.id)
+        cwi.image = "/media/"+cats.image.path
+        cwi.image = cwi.image.replace(
+            "media//Users/vbm/vscode/python/home/David/day22/", "")
+        cat.append(cwi)
     
     
     mapper = {"LISTBYCOLOR": cat}
@@ -68,7 +72,8 @@ def all_color(request):
         
         c.color = color["color"] # Список цветов
         c.text = "<---Посмотреть--->"
-        c.n = Price.objects.filter(color=c.color).count()
+        c.n = Price.objects.filter(owner=request.user,color=c.color).count()
+        c.notext =""
         catnumber.append(c)
     
     mapper = {"COLORS": catnumber}
@@ -80,19 +85,49 @@ def add_cat(request):
     
     if request.method != "POST":
         catform = PriceForm()
-        imageform = ImageForm()
     else:
-        catform = PriceForm(request.POST)
-        imageform = ImageForm(request.POST, request.FILES)
+        catform = PriceForm(request.POST,  request.FILES)
         
-        if catform.is_valid() and imageform.is_valid()  :
+        if catform.is_valid():
+            cat = catform.save(commit=False)
+            cat.owner = request.user
+            cat.save()
+            
             catform.save()
-            imageform.save()
             return redirect("Cats:allCats")
-    mapper = {"catform": catform, "imageform": imageform}
+    mapper = {"catform": catform}
     return render(request, "Cats/add_Cat.html", mapper)
         
+@login_required
+def del_cat(request,cat_id):
+    cat = Price.objects.get(id=cat_id)
+    cat.delete()
+    return render(request, "Cats/del_Cat.html")
 
-
+@login_required        
+def PermissionCatsPost(request):
+    if not request.user.is_staff:
+        raise Http404
+    post = []
+    cats= Price.objects.filter(approved=0)
+    
+    for postscats in cats:
+        cwi = CatWithImage()          
+        cwi.cat = Price.objects.all().get(id=postscats.id)
+        cwi.image = "/media/"+postscats.image.path
+        cwi.image = cwi.image.replace(
+            "media//Users/vbm/vscode/python/home/David/day22/", "")
+        post.append(cwi)
         
+    mapper = {"postcats": post}
+    return render(request,"Cats/postcats.html", mapper)
 
+
+@login_required
+def updatepost(request, cat_id):
+    cat = Price.objects.get(id=cat_id)
+    cat.approved= 1
+    cat.save()
+               
+    return render(request,"Cats/getdate.html")
+    

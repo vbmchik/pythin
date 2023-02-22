@@ -1,0 +1,24 @@
+<p><a href="{% url 'Cats:index' %}">Information Cats </a></p>
+<p>
+    <a href="{% url 'Cats:allCats' %}"> Данные о всех котах </a>
+    <a href="{% url 'Cats:allColors' %}"> Поиск котов по цвету </a>
+
+
+</p>
+{%if user.is_authenticated%}
+    Hello, {{user.username}}
+    <a href= "{% url "users:logout" %}">---Выход---</a>
+    
+    {% else %}
+    <a href="{% url "users:register" %}">---Регистрация---</a>
+    <a href="{% url "users:login" %}">---Вход---</a>
+{% endif %}
+{% block content %}{% endblock content %}
+
+
+
+
+{% block additional_style %}
+<style>
+    body {background-color:aquamarine;}
+{% endblock additional_style %}

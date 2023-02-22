@@ -10,4 +10,4 @@ admin.site.register(Image)
 
 from django.contrib.admin.models import LogEntry
 
-LogEntry.objects.all().delete()
+#LogEntry.objects.all().delete()

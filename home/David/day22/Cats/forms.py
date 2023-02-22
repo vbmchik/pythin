@@ -12,8 +12,8 @@ class BreedForm(forms.ModelForm):
 class PriceForm(forms.ModelForm):
     class Meta:
         model = Price
-        fields = ["breed","color", "age", "price"]
-        labels = {"breed": "Порода", "color": "Окрас", "age": "Возраст", "price": "ЦЕНА" }
+        fields = ["breed","color", "age", "price","image"]
+        labels = {"breed": "Порода", "color": "Окрас", "age": "Возраст", "price": "ЦЕНА", "image": "Добавить картинку" }
 
 class ResumeForm(forms.ModelForm):
 

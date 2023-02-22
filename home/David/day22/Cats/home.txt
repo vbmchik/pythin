@@ -1,0 +1,15 @@
+ request.user.groups.all() - список групп пользователя (всех)
+
+    нам нужно чтобы новый пост не показывался сразу а проходил модерацию
+
+    модератор - создаем в админке группу moderator запоминаем ее id
+    в модели мы у класса entry дбавляем поле approved и по умолчанию оно равно 0
+    b = models.DecimalField(default=0)
+    модератор член группы модераторов может опубликовать пост и тогда он будет виден всем
+    без approved = 1 пост не виден
+
+    entry = Entries.objects.get(id=emtry_id)
+    entry.approved = 1
+    entry.save()
+
+    return render ..... aprroved entry 

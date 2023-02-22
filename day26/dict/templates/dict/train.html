@@ -1,0 +1,17 @@
+{% extends "dict/base.html" %}
+{% load bootstrap4 %}
+{% block page_header %}
+  <h2>Проверь себя</h2>
+<script> 
+function notify(el) {
+  el.color="color:black";
+}
+</script>
+{% endblock page_header %}
+{% block content %}
+    <ul class="list-group">
+        {% for word in words %}
+        <li class="list-group-item" onclick="notify(this)">{{word.word}} : <span style="color:white;">{{word.transc}}</span> </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

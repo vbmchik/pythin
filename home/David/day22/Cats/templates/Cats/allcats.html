@@ -1,15 +1,42 @@
 {% extends "Cats/base.html" %}
+{% load bootstrap4%}
+{% block page_header %}
+<h1 class="text-light">Все записи </h1>
+{% endblock page_header %}
+
+<meta http-equiv="expires" content="0">
+
 {% block content %}
-  <p>Все коты с картинками</p>
-
   {% for c in images %}
-    <p>{{ c.cat }}</p>
-      <div>
-        <img src="{{c.image }}"height="250" style="max-width: 270px">       
-
+    
+    <div class="card mb-3 bg-dark text-white">
+      <p class="card-header text-white">
+        {{c.cat.date_added| date:"M d, Y H:i"}}</p>
+        <small><ul><h5>{{ c.cat }}{{ c.text }}</h5></ul>
+          <div>
+            <ul>
+              <img src="{{c.image }}"height="250" style="max-width: 270px ">       
+            </ul>
+          </div>  
+            <div class="d-flex justify-content-end">
+            {% buttons%}
+              <a href='{% url "Cats:delCat" c.cat.id %}' role="button" class="btn btn-danger btn-large">удалить кота</a>  
+            {% endbuttons%}
+            </div>
+        </small>
       </div>
+    </div>  
   {% endfor %}
   
-  <p><a href="{% url "Cats:addCat" %}">Добавить котенка</a></p>
+  <div class="d-flex justify-content-end">
+    {% buttons%}
+    <button class="btn-success btn-lg mr-3" type="button">
+      <a href="{% url "Cats:addCat" %}">Добавить котенка</a>
+    </button>
+    {% endbuttons%}
+  </div>
+</header> 
+
+
 
 {% endblock content %}

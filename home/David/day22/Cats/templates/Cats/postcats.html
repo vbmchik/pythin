@@ -1,0 +1,38 @@
+{% extends "Cats/base.html" %}
+{% load bootstrap4%}
+{% block page_header %}
+<h1 class="text-light"> Неразрешенные записи </h1>
+{% endblock page_header %}
+
+{% block content %}
+  {% for c in postcats %}
+  {{grrr}}
+    <div class="card mb-3 bg-dark text-white">
+      <p class="card-header text-white">
+        {{c.cat.date_added| date:"M d, Y H:i"}} </p>
+        <small><ul><h5>{{ c.cat }}</h5></ul>
+          <div>
+            <ul>
+              <img src="{{c.image }}"height="250" style="max-width: 270px ">       
+            </ul>
+          </div> 
+          
+          <div class="d-flex justify-content-end">
+          {% buttons%}
+            <button type="button" class=" btn btn-danger mr-3">
+            <a href = "{% url "Cats:delCat" c.cat.id %}">Отказ</a>
+            </button>
+            <button type="button" class=" btn btn-success mr-3">
+              Принять
+            <a href = "{% url "Cats:updatepost" c.cat.id %}"/a>
+            </button>
+          {% endbuttons%}
+          
+          </div>
+        </small>
+    </div>
+  {% endfor %}
+  
+
+
+{% endblock content %}

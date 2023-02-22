@@ -1,0 +1,15 @@
+{% extends "dict/base.html" %}
+{% load bootstrap4 %}
+{% block page_header %}
+  <h2>Список созданых категорий</h2>
+  <p>
+    <a href="{% url 'dict:addcat'  %}" >Создать новую категорию</a>
+  </p>
+{% endblock page_header %}
+{% block content %}
+    <ul class="list-group">
+        {% for cat in cats %}
+        <li class="list-group-item">{{cat}}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

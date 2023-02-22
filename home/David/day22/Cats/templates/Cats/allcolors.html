@@ -1,17 +1,24 @@
 {% extends "Cats/base.html" %}
+{% block page_header %}
+<h1 class="text-light">Поиск по окрасу</h1>
+{% endblock page_header %}
+
 {% block content %}
-  <p>Котики по цветам</p>
-  <ul>
-    {% for c in COLORS %}
-    <p>
+  <div class="card mb-3 bg-dark text-white">
+    <ul>
+      {% for c in COLORS %}
+        {% if c.n > 0  %}
+          <p>{{ c.notext }}</p>
       
-      {{ c.color }} есть в наличии кол:{{ c.n }} <a href = "{% url "Cats:catbycolor" c.color %}">{{ c.text }}</a>
+        <h5>{{ c.color }} есть в наличии кол:{{ c.n }} <a href = "{% url "Cats:catbycolor" c.color %}">{{ c.text }}</a><h5>
+        {% endif %}
       
-    </p>
-    {% empty %}
-      <li>No cats have been added yet.</li>
-    {% endfor %}
-  </ul>
+      </p>
+      {% empty %}
+        <li>No cats have been added yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
 
   
 {% endblock content %}

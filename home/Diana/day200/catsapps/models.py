@@ -30,7 +30,7 @@ class Cat(models.Model):
 
 
     def __str__(self) -> str:
-        return f"{self.behavor} {self.color} {self.kind}"
+        return f" Color: {self.color}, Behavior: {self.behavor},Kind: {self.kind}"
     
 
 

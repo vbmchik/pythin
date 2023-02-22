@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from .midlleware import get_current_user
+from django.db.models import Q
 # Create your models here.
 class Breed(models.Model):
     breed = models.CharField(max_length=40)
@@ -31,13 +32,20 @@ class Image(models.Model):
     def __str__ (self):
         return self.title
 
-    
+
 class Price(models.Model):
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE, primary_key=False) 
     color = models.CharField(max_length= 20)
     age = models.CharField(max_length= 2)
     price = models.DecimalField(decimal_places=2, max_digits=10, primary_key=False)
+    image = models.ImageField(upload_to='images/', null=True, max_length=255)
     date_added = models.DateTimeField(auto_now_add=True, primary_key=False)
+    approved =models.DecimalField(decimal_places= 2, max_digits =10, default=0, null= True)
+        
+    def __repr__(self):
+        return 'Image(%s, %s)' % (self.image)
     
+    
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return f"Порода: {self.breed} Окрас: {self.color} Возраст: {self.age} ЦЕНА: {self.price}"    

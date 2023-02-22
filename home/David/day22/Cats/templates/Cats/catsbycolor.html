@@ -1,19 +1,24 @@
 {% extends "Cats/base.html" %}
+{% block page_header %}
+<h1 class="text-light">Витрина</h1>
+{% endblock page_header %}
 {% block content %}
 
-
-  <p>Витрина</p>
-  <ul>
-    {% for cat in LISTBYCOLOR %} 
-      <p>{{ cat.filterby }}</p>
-      <p>{{ cat.cats_id }}</p>
-      <div>
-        <img src="{{cat.images }}"height="250" style="max-width: 270px">       
-      </div>
-    {% empty %}
-      <li>На витрине нет котов, приходите позже.</li>
-    {% endfor %}
-  </ul>
-
+<div class="card mb-3 bg-dark text-white">
+  {% for cat in LISTBYCOLOR %}
+  <p class="card-header text-white">
+    {{cat.cat.date_added| date:"M d, Y H:i"}} </p>
+    <small>
+      <ul> 
+          <h4>{{ cat.cat }}</h4>
+          <p>{{ cat.cats_id }}</p>
+          <div>
+            <img src="{{cat.image }}"height="250" style="max-width: 270px">       
+          </div>
+        {% empty %}
+          <li>На витрине нет котов, приходите позже.</li>
+        {% endfor %}
+      </ul>
+  </div>
 
 {% endblock content %}
