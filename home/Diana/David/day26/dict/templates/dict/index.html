@@ -1,0 +1,21 @@
+{% extends "dict/base.html" %}
+{% block page_header %}
+    <div class='jumbotron'>
+        <h1 class="display-3">Dictionaries for you</h1>
+        <p class="lead">You can create your own dictionary and use it for learn and fun
+        </p>
+    </div>  
+    {% if user.is_authenticated %}
+    <div class="container-fluid">
+       <p class="lead">
+          <a href="{% url 'dict:cats'  %}" >Словарные категории</a>
+       </p>
+       <p class="lead">
+          <a href="{% url 'dict:words'  %}" >Слова</a>
+       </p>
+       <p class="lead">
+          <a href="{% url 'dict:train'  %}" >Проверь себя</a>
+       </p>
+    </div>  
+    {% endif %}
+{% endblock page_header %}

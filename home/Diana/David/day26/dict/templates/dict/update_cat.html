@@ -1,0 +1,12 @@
+{% extends "dict/base.html" %}
+{% block content %}
+<p>Поменять тему</p>
+    {% for cat in cats %}
+    <form action="{% url 'dict:updatecat' cat.id %}" method='post' >
+    {% endfor%}
+        {% csrf_token %}
+        {{ Form.as_p }}
+        <button name="submit">Добавить изменения</button>
+    </form>
+
+{% endblock content %}

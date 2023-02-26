@@ -1,0 +1,37 @@
+{% extends "Food/base.html" %}
+{% load bootstrap4%}
+{% block page_header %}
+<h1 class="text-light"> Неразрешенные записи </h1>
+{% endblock page_header %}
+
+{% block content %}
+  {% for post in postres %}
+  {{grrr}}
+    <div class="card mb-3 bg-dark text-white">
+      <p class="card-header text-white">
+        {{post.date.date_added| date:"M d, Y H:i"}} </p>
+        <small><ul><h5>{{ post.date }}</h5></ul>
+          <div>
+            <ul>
+              <img src="{{post.image }}"height="250" style="max-width: 270px ">       
+            </ul>
+          </div> 
+          
+          <div class="d-flex justify-content-end">
+          {% buttons%}
+            <button type="button" class=" btn btn-danger mr-3">
+            <a href = "{% url "Food:DelRestaurant" post.date.id %}">Отказ</a>
+            </button>
+            <button type="button" class=" btn btn-success mr-3">
+            <a href = "{% url "Food:getpost" post.date.id %}">Прнять</a>
+            </button>
+          {% endbuttons%}
+          
+          </div>
+        </small>
+    </div>
+  {% endfor %}
+  
+
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends "Food/base.html" %}
+
+{%load bootstrap4%}
+{% block page_header %}
+<h1 class = "display-3 text-warning">Ваши записи</h1>
+{% endblock page_header %}
+{% block content %}
+    <div class="col-6">
+        <div class="p-2"></div>
+    </div>
+    {% for job in jobRestaurant %}
+    <table class="table table-dark">
+        <thead> 
+        <tr>
+            <th scope="col">Картинка</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Город</th>
+            <th scope="col">Ресторан</th>
+            <th scope="col">
+                {% buttons%}
+        
+                    <a href="{% url "Food:DelRestaurant" job.res_id.id %}" role= "button" class="btn-danger">Удалить</a>
+                    <a href="{% url "Food:updatepost" job.res_id.id %}" role= "button" class="btn-primary">Редактировать</a>
+                {% endbuttons%}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row"><img src="{{job.image }}"height="250" style="max-width: 270px "></th>
+            <td>{{ job.Characteristic|wordwrap:50|linebreaksbr }}</td>
+            <td>{{job.city}}  </td>
+            <td>{{job.Name_Restaurant}}</td>
+            
+        </tr>
+    </table>
+    {% endfor %}
+    
+    <div class="d-flex justify-content-end">
+        {% buttons%}
+        
+          <a href="{% url "Food:AddRestaurant" %}" role= "button" class="btn-success btn-lg mr-3">Добавить запись</a>
+        
+        {% endbuttons%}
+      </div>
+    
+
+{% endblock content %}

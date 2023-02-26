@@ -1,0 +1,73 @@
+{% load bootstrap4 %}
+
+<!docstyle html>
+
+<html lang="ru">
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Вкусно и многоточие...</title>
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery="full"%}
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-md navbar-success bg-white mb-4 border">
+            <a class= "navbar-brand" href="{% url 'Food:index' %}">Общая информация</a>
+            <button class ="navbar-toggler" type= "button" data-toggle= "collapse"
+                data-target="#navbarCollapse" aria-controls ="navbarCollapse"
+                aria-expanded = "false" aria-label="Toggle navigation">
+                <span class ="navbar-toggler-icon"></span></button>
+            <div class ="collapse navbar-collapse" id="navbarCollapse">
+                {% if request.user.is_authenticated%}
+                    <ul class= "navbar-nav mr-left">
+                        <a class = "nav-link" href="{% url 'Food:JobRestaurant' %}"> Ваши записи </a>
+                    </ul>    
+                {% endif%}
+                {% if request.user.is_authenticated and request.user.is_staff %}
+                    <ul class= "navbar-nav mr-left">
+                        <a class = "nav-link" href="{% url 'Food:moderatorposts' %}"> Неразрешенные записи</a>
+                    </ul>
+                {% endif%}
+                <ul class="navbar-nav ml-auto">
+                    {%if user.is_authenticated%}
+                        <li class="nav-item">
+                            <span class= "navbar-text">Hello, {{user.username}}!</span>
+                        </li> 
+                        <li class="nav-item">
+                            <a class= "nav-link" href="{% url  "users:logout" %}">Выход</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class= "nav-link" href="{% url "users:register" %}">Регистрация</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class= "nav-link" href="{% url "users:login" %}">Вход</a>
+                        </li>
+                    {% endif %}
+            
+                </ul>
+            </div>
+        </nav>
+        <main role="main" class = "container">
+            <div class ="pb-2 mb-2 border-bottom">
+                {% block page_header %}
+                {% endblock page_header%}
+            </div>
+            <div class ="pb-2 mb-2 border-bottom">
+                {% block content %}
+                {% endblock content %}
+            </div>
+
+
+        </main>
+    </body>
+</html>
+
+
+
+
+{% block additional_style %}
+<style>
+    body {background-color:#8a2be2;}
+{% endblock additional_style %}
