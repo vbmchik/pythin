@@ -5,23 +5,24 @@ class KindForm(forms.ModelForm):
     class Meta:
         model = Kind
         fields = ['kind']
-        labels = {'kind': ''}
+        labels = {'kind': 'Gen'}
         
-class BrhavorForm(forms.ModelForm):
+        
+class BehavorForm(forms.ModelForm):
     class Meta:
         model = Behavor
         fields = ['behavor']
-        labels = {'behavor': ''}
+        labels = {'behavor': 'Comportament'}
         
 class ColorForm(forms.ModelForm):
     class Meta:
         model = Color
         fields = ["color"]
-        labels = {"Color": ""}
+        labels = {"Color": "Culoare"}
                       
 class CatForm(forms.ModelForm):
     class Meta:
         model = Cat
         fields = ["color",'behavor','kind']
-        labels = {"color": "color",'behavor':'behavor','kind':'kind'}
+        labels = {"color": "Culoare",'behavor':'Comportament','kind':'Gen'}
         

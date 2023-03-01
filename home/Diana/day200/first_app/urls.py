@@ -21,4 +21,5 @@ urlpatterns = [
     path("first/", include("firstapps.urls")),
     path("fin/", include("finapp.urls")),
     path("", include("catsapps.urls")),
+    path("users/", include("users.urls")),
 ]

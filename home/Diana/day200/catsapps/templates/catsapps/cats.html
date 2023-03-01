@@ -1,8 +1,8 @@
 
 {% extends "catsapps/base.html" %}
+{% load bootstrap4 %}
 {% block content %}
-    <p>This is overall incomes for all years and depts</p>
-     <ul>
+  <ul class="list-group">
         {% for cats in CATS %}
             <p><a href="{% url 'catsapps:cats' cats.id %}">{{ cats }}</a></p> 
         {% empty %}
@@ -10,3 +10,4 @@
         {% endfor %}
     </ul>
 {% endblock content %}
+

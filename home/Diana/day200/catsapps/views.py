@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Color,Cat,Behavor,Kind
 from .forms import CatForm
 # Create your views here.
@@ -6,6 +7,7 @@ def index(request):
     """Home page of application"""
     return render(request, "catsapps/index.html")
 
+@login_required
 def kind(request):
     kind = Kind.objects.all()
     content = {"KIND":kind}

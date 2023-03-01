@@ -1,0 +1,25 @@
+<p><a href="{% url 'catsapps:index' %}">index </a></p>
+<p>
+    <a href="{% url 'catsapps:kinds' %}">Kind Cat</a>
+<p>
+    <a href="{% url 'catsapps:behavors' %}">Behavor Cat</a>
+<p>
+    <a href="{% url 'catsapps:colors' %}">Color Cat</a>
+<p>
+    <a href="{% url 'catsapps:cats' %}"> Cat</a>
+<p>
+    <a href="{% url 'catsapps:addCats' %}"> AddCat</a>
+<p>
+        
+{% if user.is_authenticated %}
+    Hello, {{user.username}}
+   <a href="{% url 'users:logout' %}">Sign Out</a> 
+   {% else %}
+   <a href="{% url 'users:register' %}">Sign Up</a>
+   <a href="{%  url 'users:login' %}">Sign In</a>
+{% endif %}   
+
+
+    
+    
+{% block content %}{% endblock content %}
