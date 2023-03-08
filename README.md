@@ -143,3 +143,7 @@ Passcode: #9%1eOeK
 5-03
 https://us06web.zoom.us/rec/share/WwwLHW3tw5i5JtXTKuHZqbobxGchKFo8uVCmBjWK2jn6f23Cvo6d4D7HjpTBVxkL.7emX9ieOW0ff1td1 
 Passcode: z5U5^Xk?
+
+8-03
+https://us06web.zoom.us/rec/share/ZxAzUmEIFTQsSvKC08XAm7j7YIOZSUnqDn5UPS1QTfSQITq5FjDpuG-RHe8QImW7.uxfAkJ_5PblTT3ev 
+Passcode: c7e6+Y$q

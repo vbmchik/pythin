@@ -1,10 +1,12 @@
 # Token: 5987821865:AAGspBVM5SCN-moy07bNslGAl-zQEPliBgM
 
 import telebot, wikipedia
+
+
 from wikigettext import getwiki
 
 bot = telebot.TeleBot("5987821865:AAGspBVM5SCN-moy07bNslGAl-zQEPliBgM")
-wikipedia.set_lang("ru")
+wikipedia.set_lang("en")
 
 @bot.message_handler(commands=['start'])
 def start(m, res=False):
@@ -12,6 +14,7 @@ def start(m, res=False):
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
-    bot.send_message(message.chat.id, getwiki(message.text))
+    q = message.text
+    bot.send_message(message.chat.id, getwiki(q))
 
 bot.polling(non_stop=True,interval=0)

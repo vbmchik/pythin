@@ -1,0 +1,11 @@
+map
+reduce
+filter
+groupby
+sort
+sum
+
+for
+if
+lambda
+

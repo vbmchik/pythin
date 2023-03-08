@@ -20,5 +20,5 @@ def getwiki(s):
         for t in ex.options:
             errorText += t + "\n"   
         return errorText
-    except :
-            return "Текст не найден"
+    except Exception as e:
+            return repr(e) +" Текст не найден"
