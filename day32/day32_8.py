@@ -30,6 +30,8 @@ def order_making(name):
 Thread(target=order_making, args=("thread1",)).start()
 Thread(target=order_making, args=("thread2",)).start()
 Thread(target=order_making, args=("thread3",)).start()
+Thread(target=order_making, args=("thread3",)).start()
+Thread(target=order_making, args=("thread3",)).start()
 sleep(0.5)             
 for i in range(10):
     q.put(f"order {i}")
