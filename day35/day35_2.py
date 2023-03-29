@@ -24,6 +24,6 @@ def fibonacci(n, l=n):
 
 
 start = time.perf_counter()
-print(fibonacci(30))
+print(fibonacci(400))
 print(f"executed {time.perf_counter()-start}")
 print(n)
