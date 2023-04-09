@@ -1,0 +1,22 @@
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% block title %}TeaHaven{% endblock %}</title>
+    
+    </head>
+    <body>
+        <div id="header">
+            <a href="/" class="logo">TeaHeaven</a>
+        </div>
+        <div id="subheader">
+            <div class="cart">
+                Корзина пуста
+            </div>
+        </div>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
