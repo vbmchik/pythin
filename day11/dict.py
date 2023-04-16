@@ -12,7 +12,7 @@ class Finance():
 
     def bestmonth(self, year):
         max = [year, '', 0.0]
-        for month in d[year]:
+        for month in self.d[year]:
             sum = 0.0
             for business in self.d[year][month]:
                 sum = sum + self.d[year][month][business]
@@ -31,7 +31,7 @@ class Finance():
 
         self.findb = mysql.connector.connect(
             host='localhost',
-            user='python',
+            user='user2064',
             password='!QA2ws3ed'
         )
 
