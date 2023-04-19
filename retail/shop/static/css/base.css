@@ -22,10 +22,11 @@ a:hover {
 a.button, input[type="submit"] {
     color:#fff;
     background:#5993bb;
-    border-radius:4px;
+    border-radius:10px;
     padding:10px 20px;
     font-size:14px;
-    border:0;
+    border:2;
+    border-color: darkgrey;
 }
 
 a.button.light {
@@ -148,6 +149,7 @@ ul.errorlist {
 }
 
 #sidebar {
+    color:#666;
     width:220px;
     padding:30px 20px 0 0;
     float:left;
@@ -165,11 +167,12 @@ ul.errorlist {
 }
 
 #sidebar ul li a {
+    color: #3ab31c;
     display:block;
 }
 
 #sidebar ul li.selected {
-    background:#5993bb;
+    background:#3ab31c;
     border-radius:4px;
 }
 
@@ -202,8 +205,8 @@ ul.errorlist {
 }
 
 .product-detail .price {
-    color:#333;
-    font-size:28px;
+    font-size:22px;
+    color:#ff0000;
     font-weight:bold;
 }
 
@@ -214,13 +217,17 @@ ul.errorlist {
 }
 
 .product-detail h1 {
+    color:#666;
     margin-bottom:0;
 }
 
 .product-detail h2 {
+    color: darkblue;
     margin-top:10px;
 }
-
+.product-detail p {
+   color:#990b0b;
+}
 .order-form {
     float:left;
 }
