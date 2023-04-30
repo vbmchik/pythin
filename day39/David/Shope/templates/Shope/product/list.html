@@ -1,0 +1,46 @@
+{% extends 'Shope/base.html' %}
+{% load static %}
+{% block title%}
+    {% if CategorY %} 
+      {{CategorY.name}}
+    {%else%}
+      Продукты
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+    <div id= "sidebar">
+        <h3>Категории</h3>
+        <ul>
+            <li {% if not CategorY %} class ="selected" {% endif %}>
+                <a href="{% url "Shope:product_list" %}">Все продукты</a>
+            </li>
+            {% for c in CategorieS %}
+              <li {% if CategorY.slug == c.slug%} class ="selected" {% endif %}>
+                <a href = "{{ c.get_absolute_url }}">{{c.name}}</a>
+              </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+
+    <div id ="main" class= "product-list">
+
+        <h1> {%if category%} {{ CategorY.name }}{%else%}Продукты{%endif%}</h1>
+        {% for product in ProductS %}
+            <div class="item">
+                <h2><a href="{{product.get_absolute_url}}">{{product.name}}</a></h2></br>
+                
+                <a href="{{ product.get_absolute_url }}">
+                  <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                </a>
+                <h2>{{product.price}}NIS</h2>
+                
+                
+
+
+            </div>
+    {%endfor %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,69 @@
+{% extends 'Shope/base.html' %}
+
+{% load static %}
+
+{%  block title  %} 
+  Вы корзина
+{% endblock  %}
+
+{% block content %}
+<h1> Ваша корзина </h1>
+
+<table class="cart">
+    <thead>
+        <tr>
+            <th>Фото</th>
+            <th>Продукт</th>
+            <th>Количество</th>
+            <th>Удалить из корзины</th>
+            <th>Цена за единицу</th>
+            <th>Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart %}
+            {% with product=item.product %}
+            <tr>
+                <td>
+                    <a href="{{product.get_absolute_url}}">
+                        <img src ="{% if product.image%}{{product.image.url}}"{% else %}{%static "img/no_image.png" %} {%endif%}></a>
+                </td>
+                <td>
+                    {{product.name}}
+                </td>
+                <td>
+                    {{item.quantity}}
+                </td>
+                <td>
+                    <form action="{% url "cart:cart_remove" product.id %}" method="post">
+                    <input type="submit" value= "Удалить">
+                    {% csrf_token %}
+                    </form>
+                </td>
+                <td class ="num">
+                    NIS {{item.price}}    
+                </td>
+
+                <td class ="num">
+                    NIS{{item.total_price}}
+                </td>
+            </tr>
+            
+            {% endwith %}
+            {% endfor %}
+            <tr class="total">
+                <td>
+                    Всего: 
+                </td>
+                <td colspan = 4></td>
+                <td class="num">
+                    <h2>NIS {{cart.get_total_price}}</h2>
+                </td>
+            </tr>
+    </tbody>
+</table>
+<p class= "text-right">
+    <a href= "{% url "Shope:product_list"%}" class= "button-length">Продолжить покупки</a>
+    <a href= "{% url "orders:order_create" %}" class="button">Принять заказ<a>
+</p>
+{%endblock%}

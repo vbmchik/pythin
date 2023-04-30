@@ -1,0 +1,50 @@
+{
+    "type": "ПолеВвода",
+    "name": "Полеввода_ПолеВводаПароль_0D884230DDE911EDB5CC005056012643",
+    "action": {
+        "action": "68584ece-ddec-11ed-b5cc-005056012643",
+        "type": "onEnterScreenRequest",
+        "methodParameters": [
+            "Полеввода_ПолеВводаЛогин_EC93F0ABDDE811EDB5CC005056012643",
+            "Полеввода_ПолеВводаПароль_0D884230DDE911EDB5CC005056012643",
+            "ИДСессии"
+        ]
+    },
+    "hgid": "",
+    "visible": 1,
+    "focus": "КнопкаОк",
+    "color": {
+        "R": 0,
+        "G": 0,
+        "B": 0
+    },
+    "font_size": 17,
+    "weight": 1,
+    "value": "",
+    "isPassword": 1
+}
+{
+"name": "Полеввода_ПолевводаШК_06FDAFA9DEB211EDB5CC005056012643",
+"action": {
+    "action": "6486be66-deb2-11ed-b5cc-005056012643",
+    "type": "onEnterScreenRequest",
+    "methodParameters": [
+        "ИДСессии",
+        "Исполнитель",
+        "Тип",
+        "Полеввода_ПолевводаШК_06FDAFA9DEB211EDB5CC005056012643"
+    ]
+},
+"hgid": "",
+"visible": 1,
+"focus": "",
+"color": {
+    "R": 0,
+    "G": 0,
+    "B": 0
+},
+"font_size": 17,
+"weight": 5,
+"value": "",
+"isPassword": 0
+}

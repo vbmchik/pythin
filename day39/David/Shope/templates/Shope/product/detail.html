@@ -1,0 +1,29 @@
+{% extends "Shope/base.html" %}
+{% load static %}
+
+{% block title %}
+  {{ ProductS.name }}
+{% endblock %}
+{% block content %}
+  <div class="product-detail">
+    <img src="{% if ProductS.image %}{{ ProductS.image.url }}{% else %}
+    {% static "img/no_image.png" %}{% endif %}">
+    <h1>{{ ProductS.name }}</h1>
+    <h2>
+      <a href="{{ ProductS.category.get_absolute_url }}">
+        {{ ProductS.category }}
+      </a>
+    </h2>
+    {{text}}
+    <p class="price">${{ ProductS.price }}</p>
+    <form action="{% url 'cart:cart_add' ProductS.id %}" method="post">
+      {{cart_product_form}}
+      {% csrf_token %}
+      <input type="submit" value= "Добавить в корзину">
+    </form>
+    <div class="descreption">{{ ProductS.descreption|linebreaks }}</div>
+
+    
+
+  </div>
+{% endblock %}

@@ -9,6 +9,7 @@
     <img src="{% if product.image %}{{ product.image.url }}{% else %}
     {% static "img/no_image.png" %}{% endif %}">
     <h1>{{ product.name }}</h1>
+    <h5>{% if quant > 0 %}В вашей корзине уже есть {{quant}}{%endif%}</h5>
     <h2>
       <a href="{{ product.category.get_absolute_url }}">
         {{ product.category }}

@@ -31,6 +31,11 @@ class Cart:
             
     def save(self):
         self.session.modified = True
+        
+    def productq(self, product_id): 
+        if product_id in self.cart.keys():
+            return self.cart[product_id]['quantity']
+        return 0
 
     def __iter__(self):
         """

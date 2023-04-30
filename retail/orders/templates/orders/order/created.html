@@ -1,8 +1,10 @@
-{% extends "shop/base.html" %}
-{% block title %}
-  Спасибо Ввм, что Вы с нами!
-{% endblock %}
-{% block content%}
-<h1>Спасибо!</h1>
-    <p>ваш заказ был успешно принят под номером: <strong>{{order.id}}</strong></p>
+{% extends 'shop/base.html' %}
+{% block title  %}
+    Спасибо Вам, что вы с нами!
+{% endblock  %}
+{% block content  %}
+
+<h1> Спасибо! </h1>
+    <h5> Ваш заказ был успешно прият под номером: <strong>{{order.id}}</strong></h5>
+    
 {%endblock%}

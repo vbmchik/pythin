@@ -1,27 +1,31 @@
-{% extends "shop/base.html" %}
-{% block title %}
-  Создание заказа
-{% endblock %}
-{%block content%}
 
-<h1>Оформить заказ</h1>
-<div class="order-info">
-    <h3>Ваш заказ</h3>
+{% extends 'shop/base.html' %}
+{% block title  %}
+    Создание заказа
+{%endblock%}
+{% block content %}
+<h1> Оформить заказ</h1>
+    <div class="order-info">
+    <h3> Ваш заказ</h3>
     <ul>
     {% for item in cart %}
         <li>
-            {{item.quantity}}x{{item.product.name}}
+            {{item.quantity}} {{item.product.name}}
             <span>
                 NIS {{item.total_price}}
             </span>
         </li>
-    {%endfor%}
+
+    {% endfor %}
     </ul>
+
     <p> Итого: NIS {{cart.get_total_price}}</p>
 </div>
-    <form method='post' class="order_form">
+
+    <form method="post" class="order_form">
         {{form.as_p}}
-        <p><input type="submit" value="Разместить заказ"></p>
+        <p><input type="submit" value= "Разместить заказ"></p>
         {% csrf_token %}
     </form>
-{%endblock%}
+
+{% endblock  %}

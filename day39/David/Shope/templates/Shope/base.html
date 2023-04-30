@@ -1,0 +1,34 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <title>{% block title %} TeaHaven {% endblock %}</title>
+        <link href= "{% static "c_sss/base.css" %}" rel ="stylesheet">
+    </head>
+    <body>
+        <div id ="header">
+            <a href ="/" class = "logo">Мой магазин</a>
+        </div>
+        
+        <div id= "subheader">
+            <div class = "cart"> 
+                {% with total_items=cart|length%}
+                    {% if total_items > 0 %}
+                        <a href="{% url "cart:cart_detail"%}" >
+                            {{cart.pozition}}
+                        </a>
+                    {% else %}
+                        Ваша корзина пуста!
+                    {% endif %}    
+                {%endwith%}
+            </div>
+        </div>
+        <div id="content">
+            {% block content %}
+
+            {% endblock content%}
+        </div>
+    </body>
+</html>
+
