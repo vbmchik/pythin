@@ -16,11 +16,14 @@
       </a>
     </h2>
     <p class="price">NIS {{ product.price }}</p>
+    <p class="In stock: ">{{ product.stock }}</p>
+    
     <form action ="{% url "cart:cart_add" product.id %}" method="post">
       {{cart_product_form}}
       {%csrf_token%}
       <input type="submit" value = "Добавить в корзину">
     </form>
+    
     <p class="description">{{ product.description|linebreaks }}</p>
 
     

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'payment',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -71,9 +72,10 @@ TEMPLATES = [
         },
     },
 ]
-
+STRIPE_SECRET_KEY = ""
+STRIPE_API_VERSION = 2
 WSGI_APPLICATION = 'retail.wsgi.application'
-
+STRIPE_WEBHOOK = 'whsec_36231f5ecf3bbfb0d6c0d30d0869668f2e3445c8ae4e9020a1647d93d8fea9a5'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -104,7 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+# Expire after 30 minutes
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 

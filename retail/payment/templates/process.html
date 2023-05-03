@@ -1,0 +1,35 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %} Оплата {% end block %}
+<h1>Инормация о заказе</h1>
+<table class='cart'>
+    <thead>
+        <tr>
+            <th>Изображение</th>
+            <th>Продукт</th>
+            <th>Цена</th>
+            <th>Кол-во</th>
+            <th>Итого</th>
+        </tr>
+        <tbody>
+            {% for item in order.items.all %}
+            <tr class="row{% cycle "1" "2" %}">
+                <td>
+                    <img src="{% if item.product.image %}" {{ item.product.image.url }}{%else%}{% static "img/no_image.png" %}{% endif %}"">
+                </td>
+                <td>{{item.product.name}}</td>
+                <td class="num">NIS {{item.price}}</td>  
+                <td class="num">NIS {{item.quantity}}</td>
+                <td class="num">NIS {{item.get_cost}}</td>  
+                {%endfor%}
+                <tr class="total">
+                    <td colspan="4">Итого</td>
+                     <td class="num">NIS {{order.get_total_cost}}</td>
+                </tr>  
+        </tbody>
+    </table>
+    <form action="{% url "payment:process" %}" method="post">
+        <input type="submit" value="Оплатить">
+        {%csrf_token%}
+    </form>
+{% endblock %}
