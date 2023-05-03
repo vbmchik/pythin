@@ -25,22 +25,19 @@ def product_detail(request, id, slug):
                                 id=id,
                                 slug=slug,
                                 available=True)
-    if (product.stock < 21):
-        pquant = int(product.stock+1)
-        if( pquant == 1 ):
-            cart_product_form = None
-        cart_product_form = CartAddProductsForm(pquant=pquant)
-    else:
-        pquant = 21
-        cart_product_form = CartAddProductsForm()
+    pquant = int(product.stock+1)
+    cart_product_form = CartAddProductsForm(pquant=pquant)
+
     quant = cart.Cart(request).productq(str(id))
-    if cart_product_form:
+    if pquant !=1:
         return render(request,
                     'shop/product/detail.html',
                     {'product': product,
                      'yescart': True,
+                     'quant': quant,
                      'cart_product_form':cart_product_form})
     else:
         return render(request,
                       'shop/product/detail.html',
+                      'quant',
                       {'product': product,})
