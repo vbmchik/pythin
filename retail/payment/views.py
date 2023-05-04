@@ -12,8 +12,8 @@ def payment_process(request):
     order_id = request.session.get('order_id')
     order = get_object_or_404(Order, id=order_id)
     if request.method == 'POST':
-        success_url = request.build_absolute_url(reverse('payment:completed'))
-        cancel_url = request.build_absolute_url(reverse('payment:cancelled'))
+        success_url = request.build_absolute_uri(reverse('payment:completed'))
+        cancel_url = request.build_absolute_uri(reverse('payment:canceled'))
         
         session_data = {
             'mode': 'payment',

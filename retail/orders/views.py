@@ -19,7 +19,7 @@ def order_create(request):
                 p.save()
             cart.clear()
             order_created.delay(order.id)
-            request.sesion['order_id'] = order.id
+            request.session['order_id'] = order.id
             return redirect(reverse('payment:process'))
         #render(request, "orders/order/created.html", {"order": order})
     else:
