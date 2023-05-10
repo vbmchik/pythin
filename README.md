@@ -204,3 +204,7 @@ Passcode: N5R6W.5!
 07-05
 https://us06web.zoom.us/rec/share/OnWrDlvT-EUoqNs7zsChJGafxvyFUHvKRJjxkumKSvUfTIgWDhMPLqNZeWA113aJ.COnYjMignYbBbxwc 
 Passcode: 0eV#2DNi
+
+10-05
+https://us06web.zoom.us/rec/share/sjFhd4CuXWGP44lrPox9Y1v8NM3QjvbOHFrk7lg5PpxlLxTNIDoqcqrle-Uam6CH.PBkdfUr1qAxvq15t 
+Passcode: oXqd.8iT
