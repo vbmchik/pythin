@@ -9,7 +9,7 @@ class TomatoBush():
             tomato.grow()
     
     def all_are_ripe(self):
-        return any(map(lambda x: x.state == x.laststate, self.tomatoes))
+        return all(map(lambda x: x.state == x.laststate, self.tomatoes))
             
     def give_away_all(self):
         self.tomatoes.clear()

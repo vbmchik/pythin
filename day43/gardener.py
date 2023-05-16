@@ -10,6 +10,9 @@ class Gardener():
     def work(self):
         for plant in self.__plants:
             plant.growall()
+            
+    def if_not_bushes_harvested(self):
+        return any(map(lambda x: x.number_of_tomatoes() ,self.__plants))
     
     def harvest(self):
         if len(self.__plants) == 0:
@@ -27,7 +30,9 @@ class Gardener():
             
 g = Gardener("Samuel", 120)
 
-for _ in range(19):
+while(g.if_not_bushes_harvested()):
     g.work()
     g.harvest()
     sleep(0.5)
+    
+g.harvest()
