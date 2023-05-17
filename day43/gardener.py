@@ -5,7 +5,7 @@ from tomatobush import TomatoBush, Tomato
 class Gardener():
     def __init__(self, name, number_of_bushes) -> None:
         self.name = name
-        self.__plants = [ TomatoBush(Tomato._random.randint(1,35)) for _ in range(number_of_bushes)]
+        self.__plants = [ TomatoBush(Tomato.random.randint(1,35)) for _ in range(number_of_bushes)]
         
     def work(self):
         for plant in self.__plants:
