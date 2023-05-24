@@ -1,5 +1,9 @@
+from asyncio import sleep
 import os
 from pprint import pprint
+from random import randint, random
+import time
+
 
 
 class Board:
@@ -78,12 +82,13 @@ class Board:
         y = self.n-tuplexy[1]
         x = tuplexy[0]-1
         self.__board[y][x] = 1            
-    
-b = Board(9)
+  
+n = int(input())  
+b = Board(n)
 
-b.startpoint(4,6)
-
+b.startpoint(randint(2,n), randint(2,n))
+os.system('clear')
 while(b.move()):
     pprint(b.board)
-    input()
+    time.sleep(0.5)
     os.system('clear')

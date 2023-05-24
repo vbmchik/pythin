@@ -221,3 +221,7 @@ Passcode: 51%5&st!
 21-05
 https://us06web.zoom.us/rec/share/UhSg4aJB0hkhgFwu4hxnOS3Lb0-It98hhI8eP3sUk1UDlo2dAa5rfReQpQNEkA9B.c4pevR3AgYc-hS7y 
 Passcode: w.R6*!&F
+
+24-05
+https://us06web.zoom.us/rec/share/Eq5BZU8l7EXBv7Ix8YzgPm8nUlSGYUTN56hFv15etfeFF5Yh9nDXx9PVVT7_8cTK.qRzrVN8FBDbwUlSw 
+Passcode: 2Ki6PPT=
