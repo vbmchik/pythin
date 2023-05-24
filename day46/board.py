@@ -51,7 +51,7 @@ class Board:
                     pvector = (-1*self.__vectors[self.__vector][1],
                             self.__vectors[self.__vector][0])
                     ppoint = self.pointsum((x, y), pvector)
-                    if self.bvalue(ppoint[0], ppoint[1]):
+                    if not self.bvalue(ppoint[0], ppoint[1]):
                         a, b = self.pointsum(self.__vectors[self.__vector], (x,y))
                         if a ==0 or a > self.n or b ==0 or b > self.n:
                             return False
