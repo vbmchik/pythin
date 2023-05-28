@@ -1,8 +1,3 @@
-import os
-from pprint import pprint
-from random import randint, random
-import time
-
 class Board:
    
     def __init__(self, n) -> None:
@@ -10,7 +5,7 @@ class Board:
         self.__n = n
         for i in range (n):
             self.__board.append([ 0 for _ in range (n)])
-    
+              
     @property
     def n(self):
         return self.__n
@@ -32,6 +27,6 @@ class Board:
             v = tuplexy[2]
         except:
             v = 1
-        self.__board[y][x] = v            
-  
-
+        self.__board[y][x] = v  
+        
+    

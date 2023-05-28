@@ -1,13 +1,12 @@
-
 from board import Board
 
 
 class Turtle:
     __vectors = [(0, 1), (-1, 0), (0, -1), (1, 0)]
     def __init__(self, board: Board, point: tuple, value) -> None:
-        self.board = board
-        self.__point = point
-        self.__vector = 0
+        self.board = board 
+        self.__point = point 
+        self.__vector = 0 
         self.board.board = point[0], point[1], value
         self.camove=True
         self.__value = value
@@ -37,9 +36,8 @@ class Turtle:
             if self.board.freecell(x, y):
                 self.board.board = x, y, self.__value
                 self.__point = (x, y)
-                if not self.leftcell(x, y):
-                    return True
-                self.turnvector()
+                if self.leftcell(x, y):
+                    self.turnvector()
                 return True
         return False
 
@@ -60,7 +58,7 @@ class Turtle:
                     if not self.leftcell(x,y):
                         a, b = self.pointsum(
                             self.__vectors[self.__vector], (x, y))
-                        if a == 0 or a > self.board.n or b == 0 or b > self.board.n:
+                        if not self.insideboard(a,b):
                             self.camove = False
                             return False
                 return True
