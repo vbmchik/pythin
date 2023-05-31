@@ -229,3 +229,7 @@ Passcode: 2Ki6PPT=
 28-05
 https://us06web.zoom.us/rec/share/mVr271BTEtAYPXi7-c5w8d4S-ZH3TOxCxaReybbMe7pY9yq-IXjOG6yKMjI5bMEr.DJlV2LkLzX1pfKfn 
 Passcode: D^R1fyd?
+
+31-05
+https://us06web.zoom.us/rec/share/QKClM8HpD40MFjohKduFAl7zO2amQlr7ghhc0i2poQkA3ByA21juQgyqyJ74wUYw.p5Lh9CvWAGQwdif8 
+Passcode: $^n7EdY7

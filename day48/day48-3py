@@ -1,0 +1,10 @@
+import re
+
+
+word = "12 1 23 12343"
+# match = re.search(r'iii', "32iiip")
+match = re.search(r'\d\s\d\s\d', word)
+if match:
+    a, b = match.span()
+    print(a, b)
+    print(word[a:b])
