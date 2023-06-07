@@ -1,29 +1,20 @@
-def mountain_scape(tops: list[tuple[int, int]]) -> int:
-    # your code here
-    overlap = 0
-    l = []
+def mountain_scape(tops):
+
+    total_area = 0
+    covered = set()
+
     for x, y in tops:
-        l.append((x-y,x+y))
-    l.sort(key=lambda x: x[0])  
-    print(l) 
-    n = len(l)
-    area = 0
-    overlap = 0
-    for x in range(n):
-        area += ((l[x][1]-l[x][0])/2)**2
-        if l[x][0] < 0:
-            area -= (l[x][0]**2)/2
-        if x < n-1:
-            for y in range(x+1,n):
-                if l[x][1] > l[y][0]:
-                    o = l[x][1] - l[y][0]
-                    overlap += (o/2)**2
-    return area-overlap
+        height = y
+        for i in range(x - height+1, x + height ):
+            for j in range(1,  height - abs(i-x)+1):
+                if (i, j) in covered:
+                    continue
+                else:
+                    covered.add((i, j))
+                    total_area += 1
+    return total_area
 
-
-print(mountain_scape([(1, 1), (4, 2), (7, 3)]))
-
-# __1_____2__
-# _1___2_____
-# ____1____2_
-# __1________2
+# test the function with some examples
+print(mountain_scape([(1, 1), (4, 2), (7, 3)]))  # should print 13
+print(mountain_scape([(0, 2), (5, 3), (7, 5)]))  # should print 29
+print(mountain_scape([(1, 3), (5, 3), (5, 5), (8, 4)]))  # should print 37

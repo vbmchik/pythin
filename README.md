@@ -238,3 +238,7 @@ Passcode: $^n7EdY7
 04-06
 https://us06web.zoom.us/rec/share/1VCfbKCcPeTgY9K4wQX35MIKafktytUq7WQ6WXN-Qtt9qLkTG9YdmO_bsqxwT4t6.qn2uK-qNrS4_NKbP 
 Passcode: jk!c5k5*
+
+07-06
+https://us06web.zoom.us/rec/share/FRQEpenIuhZTuoHkNMWXIZflsqBMcpKjgIppXieaLJGX0-BIJtDvTB3KoU6rokxu.pogN52Z49_6jzmUi 
+Passcode: J*P+A045

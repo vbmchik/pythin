@@ -18,11 +18,12 @@ def NthUglyNumber2(n ) :
         if nextUgly == m5 :
             i5+=1
             m5 = ugly[i5] * 5
-    return nextUgly
+        #print(nextUgly)
+    return ugly
 
 
 
 # Driver code
-p = 900
+p = 50
 no = NthUglyNumber2(p)
-print(f"{p}th ugly no. is ", no)
+print(no)
