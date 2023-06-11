@@ -242,3 +242,7 @@ Passcode: jk!c5k5*
 07-06
 https://us06web.zoom.us/rec/share/FRQEpenIuhZTuoHkNMWXIZflsqBMcpKjgIppXieaLJGX0-BIJtDvTB3KoU6rokxu.pogN52Z49_6jzmUi 
 Passcode: J*P+A045
+
+11-06
+https://us06web.zoom.us/rec/share/PxcX6R7J4PKpsdS2BiK9cIQO6FtRT4iOET2vxrq83-0R4zq2iDc3Bnyt7Y78sbN4.ylj9F7O1j7bxWxKC 
+Passcode: p+tf106w
