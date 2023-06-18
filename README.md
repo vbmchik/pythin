@@ -246,3 +246,7 @@ Passcode: J*P+A045
 11-06
 https://us06web.zoom.us/rec/share/PxcX6R7J4PKpsdS2BiK9cIQO6FtRT4iOET2vxrq83-0R4zq2iDc3Bnyt7Y78sbN4.ylj9F7O1j7bxWxKC 
 Passcode: p+tf106w
+
+18-06
+https://us06web.zoom.us/rec/share/Sn1QgLjEnLrBPUmc07IXWmvoiBN1ehu4jqPiuYbG_cdUjEdEYXnBcEJkFC4gdHiC._YaIAtLxJRk3Kmfz 
+Passcode: =9v@gph2
