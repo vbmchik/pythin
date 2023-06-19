@@ -248,5 +248,5 @@ https://us06web.zoom.us/rec/share/PxcX6R7J4PKpsdS2BiK9cIQO6FtRT4iOET2vxrq83-0R4z
 Passcode: p+tf106w
 
 18-06
-https://us06web.zoom.us/rec/share/Sn1QgLjEnLrBPUmc07IXWmvoiBN1ehu4jqPiuYbG_cdUjEdEYXnBcEJkFC4gdHiC._YaIAtLxJRk3Kmfz 
+https://us06web.zoom.us/rec/share/27ShfTkXe8SC-9E9b3UGJrbn0IpiwcvdICnBkSTYPadBH-GO7xEQp8Chp0OoIShs.Yu6AzImneHET6XZQ 
 Passcode: =9v@gph2
