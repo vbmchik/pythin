@@ -9,7 +9,7 @@
     метод предсавления __str__ HH:MM:SS
 
 
-https://edube.org/study/
+https://edube.org/
 
 проект 
 tkinter - меню пользователя
