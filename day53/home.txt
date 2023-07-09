@@ -14,3 +14,6 @@ https://edube.org/
 проект 
 tkinter - меню пользователя
 keras_ocr 
+
+ТЗ проекта
+https://docs.google.com/document/d/18tY0rArRw5Jh5q-Lil0GHO61UgYwcNMdRbI8JKk9wU4/edit?usp=sharing
