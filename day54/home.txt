@@ -1,0 +1,12 @@
+https://www.pythontutorial.net/tkinter/tkinter-menu/
+содержать каскадное меню файлов 
+и пункт помощи или о программе
+
+запускаете распознавание тест который я приложил
+добиватесь распознавания файлов
+
+в распознавании начните менять алгоритм так чтобы текст сохранял структуру как на экране
+
+https://www.analyticsvidhya.com/blog/2022/09/extract-text-from-images-quickly-using-keras-ocr-pipeline/
+
+https://keras-ocr.readthedocs.io/en/latest/api.html#core-detector-and-recognizer
