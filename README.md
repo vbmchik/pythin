@@ -262,3 +262,6 @@ Passcode: ^J$Yq0hU
 23-07
 https://us06web.zoom.us/rec/share/NNXpbV22IN71rsDuhq-zgJ436vjBdRDn08vFRY7o9vb5cKXSMwNJbrhAEppPhatS.w2_8YqiwQjmZ1opj 
 Passcode: ZTk#zm0!
+
+30-07
+https://zoom.us/rec/share/U7FSLYjyJxqekW-QmZweweXQFyB9XfSuQVOKm8_C58nhPXRjIZwzD8_rA2kje7A7.pQz8YCITgDLLwBV6
