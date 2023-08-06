@@ -265,3 +265,9 @@ Passcode: ZTk#zm0!
 
 30-07
 https://zoom.us/rec/share/U7FSLYjyJxqekW-QmZweweXQFyB9XfSuQVOKm8_C58nhPXRjIZwzD8_rA2kje7A7.pQz8YCITgDLLwBV6
+
+06-08
+https://zoom.us/rec/share/02mejga4yDdQ0KlB0TuaRdLWt3gX5798T6JHQAHoYNd3eDxAvk4ucLjPJZMOoiIc.n3fK-WZDTMDdav9Q
+
+Всем спасибо!
+Курс окончен
